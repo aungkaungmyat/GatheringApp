@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="js1.js"></script>
+        <script type="text/javascript" src="gen_validatorv4.js"></script>
+    <label GatheringApp</label>
+</head>
+<body>
+    <form name="myForm">
+        Numbers of participants:
+        <input type="text" name="NumParticipants"><br>
+        Wishlist:
+        <div>
+            <input type="radio" name="Yes"  id= "radio1"  checked= true onchange="selectOnlyThis1(this.id)"> Yes
+            <input type="radio" name="No" id="radio2" onchange="selectOnlyThis1(this.id)"> No<br>
+        </div>
+
+        Game Type:
+        <div>
+            <input type="checkbox" name="checkbox"  id="check1" onchange="selectOnlyThis2(this.id)" checked > Normal
+            <input type="checkbox" name="checkbox"  id="check2"  onchange="selectOnlyThis2(this.id)">Rank<br> 
+        </div>
+        Time to Start:
+
+        <input type="time" name="StartTime">
+    </form>
+  
+    <p>
+        <input type="submit" name="submit" value="Submit">
+    </p>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    var frmvalidator = new Validator("myForm");
+
+    frmvalidator.addValidation("NumParticipants", "req", "Please  Put Participants");
+    frmvalidator.addValidation("NumParticipants", "lt=5", "Please don't add over 5");
+    frmvalidator.addValidation("NumParticipants", "gt=0", "Please less than 1 or equal 0");
+
+</script> 
