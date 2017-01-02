@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+  form#formCreateGroup(name='myForm',method="post",action="/myForm")
+      | Numbers of participants:
+      input#numParti(type='text', name='NumParticipants')
+      br
+      |         Wishlist:
+      div
+        input#radio1(type='radio', name='wishlist', checked='true', onchange='selectOnlyThis1(this.id)')
+        |  Yes
+        input#radio2(type='radio', name='wishlist', onchange='selectOnlyThis1(this.id)')
+        |  No
+        br
+      |         Game Type:
+      div
+        input#check1(type='checkbox', name='GameType', checked='')
+        |  Normal
+        input#check2(type='checkbox', name='GameType')
+        | Rank
+        br
+      |         Time to Start:
+      input#time(type='time', name='StartTime')
+      br
+      button#btnSubmit(type='submit', name='submit', onclick='getInputs()') submit
