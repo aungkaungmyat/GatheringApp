@@ -5,5 +5,12 @@
   </head>
   <body>
     <p>Welcome from selection page <%=userinfo.usrname%></p>
+    <form id="create-form" method="GET" action="/groupCreate">
+      <input type="submit" value="Create Group">
+    </form>
+    <form id="join-form" method="GET" action="/groupJoin">
+      <input type="submit" value="Join Group">
+    </form>
+    
   </body>
 </html>
