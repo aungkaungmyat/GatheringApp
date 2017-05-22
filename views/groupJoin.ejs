@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Join Group</title>
+  </head>
+  <body>
+    <p>Current location is</p>
+    <p id='latAndLong'></p>
+    <script>
+  					var x = document.getElementById("latAndLong");
+
+  					window.onload = function(){
+  						navigator.geolocation.getCurrentPosition(showPosition);
+  					}
+
+  					function showPosition(position) {
+  					    x.innerHTML = "Latitude: " + position.coords.latitude +
+  					    "<br>Longitude: " + position.coords.longitude;
+  					}
+  		</script>
+  </body>
+</html>

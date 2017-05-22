@@ -6,6 +6,26 @@
 	</head>
 	<body>
             <button type="button" id="Cgroup" onclick="Redirect()">Create Group</button>
-            <button type="button" id="Jgroup">Join existing Group</button>
+            <button type="button" id="Jgroup">Join existing Group</button><br>
+						<p id="demo"></p>
+	<script>
+					var x = document.getElementById("demo");
+
+					/*function getLocation() {
+					    if (navigator.geolocation) {
+					        navigator.geolocation.getCurrentPosition(showPosition);
+					    } else {
+					        x.innerHTML = "Geolocation is not supported by this browser.";
+					    }
+					}*/
+					window.onload = function(){
+						navigator.geolocation.getCurrentPosition(showPosition);
+					}
+
+					function showPosition(position) {
+					    x.innerHTML = "Latitude: " + position.coords.latitude +
+					    "<br>Longitude: " + position.coords.longitude;
+					}
+		</script>
 	</body>
 </html>

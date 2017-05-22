@@ -14,6 +14,12 @@ app.use(session({
     secret: 'what does this do?' // great question! We will come back to that, but we need it for now!
 }))
 
+/*if (navigator.geolocation) {
+  console.log('It is valild');
+} else {
+  // Print out a message to the user.
+  document.write('Your browser does not support GeoLocation');
+}*/
 
 app.use('/assets' , express.static('assets'));
 
@@ -32,5 +38,9 @@ app.post('/select',urlencodedParser,function(req,res){
 app.get('/groupCreate' , function(req,res){
   res.render('groupCreate' , {uname : req.session.uname})
 });
+
+app.get('/groupJoin' , function(req,res){
+  res.render('groupJoin')
+})
 
 app.listen(3000);
