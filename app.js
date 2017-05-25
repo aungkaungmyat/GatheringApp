@@ -1,9 +1,13 @@
 var express = require('express');
 var session = require("cookie-session");
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 var app = express();
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
+const Person = require('./models/userdb.js');
 
+mongoose.connect('mongodb://localhost/Gatheringapp');
+mongoose.Promise = global.Promise;
 //var uname;
 
 app.set('view engine', 'ejs');
@@ -28,7 +32,10 @@ app.get('/',function(req,res){
 });
 
 app.post('/select',urlencodedParser,function(req,res){
-
+    console.log(JSON(req.body));
+    Person.create(req.body).then(function(person){
+      console.log(person);
+    });
     req.session.uname = req.body.usrname;
 
 
