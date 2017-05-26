@@ -18,6 +18,9 @@ app.use(session({
     secret: 'what does this do?' // great question! We will come back to that, but we need it for now!
 }))
 
+//just a test
+app.use(bodyParser.json());
+
 /*if (navigator.geolocation) {
   console.log('It is valild');
 } else {
@@ -32,7 +35,8 @@ app.get('/',function(req,res){
 });
 
 app.post('/select',urlencodedParser,function(req,res){
-    console.log(JSON(req.body));
+    //console.log(JSON.stringify(req.body));
+
     Person.create(req.body).then(function(person){
       console.log(person);
     });
