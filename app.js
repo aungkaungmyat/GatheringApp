@@ -54,4 +54,6 @@ app.get('/groupJoin' , function(req,res){
   res.render('groupJoin')
 })
 
-app.listen(3000);
+app.listen(process.env.port || 3000, function(){
+  console.log('now listening for requests at port 3000')
+});
