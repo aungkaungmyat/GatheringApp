@@ -12,14 +12,12 @@ mongoose.Promise = global.Promise;
 
 app.set('view engine', 'ejs');
 
-//testing code
+
 
 app.use(session({
     secret: 'what does this do?' // great question! We will come back to that, but we need it for now!
 }))
 
-//just a test
-app.use(bodyParser.json());
 
 /*if (navigator.geolocation) {
   console.log('It is valild');
@@ -34,9 +32,8 @@ app.get('/',function(req,res){
   res.render('index');
 });
 
-app.post('/select',urlencodedParser,function(req,res){
-    //console.log(JSON.stringify(req.body));
 
+app.post('/select',urlencodedParser,function(req,res){
     Person.create(req.body).then(function(person){
       console.log(person);
     });

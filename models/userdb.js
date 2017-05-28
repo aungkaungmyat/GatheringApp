@@ -1,14 +1,15 @@
 const mongoose =  require('mongoose');
 const Schema = mongoose.Schema;
 
+
 //create userinfo Schema & model
 const personSchema = new Schema({
-  name:{
-    type: String,
-    required: [true,'Name field is required']
+  usrname:{
+    type: String
+    //required: [true,'Name field is required']
   },
   password:{
-    type:String
+    type: String
   }
 });
 
