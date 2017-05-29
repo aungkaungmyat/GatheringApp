@@ -39,11 +39,16 @@ app.post('/select',urlencodedParser,function(req,res){
     Person.findOne({usrname:req.body.usrname},function(error,doc){
       if(doc){
       console.log(doc);
+      if(doc.password == req.body.password){
       req.session.uname = req.body.usrname;
       res.render('select', {userinfo : req.body} );
       }
       else{
-        console.log('error');
+        console.log('wrong password');
+      }
+      }
+      else{
+        console.log('wrong username');
       }
     });
 
