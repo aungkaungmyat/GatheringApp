@@ -3,6 +3,8 @@ var session = require("cookie-session");
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 const Person = require('./models/userdb.js');
 
@@ -62,6 +64,10 @@ app.get('/groupJoin' , function(req,res){
   res.render('groupJoin')
 })
 
-app.listen(process.env.port || 3000, function(){
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
+
+server.listen(process.env.port || 3000, function(){
   console.log('now listening for requests at port 3000')
 });
