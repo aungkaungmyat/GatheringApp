@@ -46,17 +46,18 @@ app.post('/select',urlencodedParser,function(req,res){
       res.render('select', {userinfo : req.body} );
       }
       else{
-        console.log('wrong password');
+        console.log('invalid password');
       }
       }
       else{
-        console.log('wrong username');
+        console.log('username not found');
       }
     });
 
 })
 
 app.get('/groupCreate' , function(req,res){
+  //console.log('socket user name is '+ socket.username);
   res.render('groupCreate' , {uname : req.session.uname})
 });
 
@@ -66,6 +67,11 @@ app.get('/groupJoin' , function(req,res){
 
 io.on('connection', function(socket){
   console.log('a user connected');
+  console.log(io.sockets.clients());
+  socket.on('currentUser', function(username){
+    socket.username = username;
+  });
+
 });
 
 server.listen(process.env.port || 3000, function(){
