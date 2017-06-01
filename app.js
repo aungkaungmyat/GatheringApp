@@ -8,6 +8,9 @@ var io = require('socket.io')(server);
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 const Person = require('./models/userdb.js');
 
+//keepin track of alll the users
+var clients = [];
+
 mongoose.connect('mongodb://localhost/Gatheringapp');
 mongoose.Promise = global.Promise;
 //var uname;
@@ -62,7 +65,8 @@ app.get('/groupCreate' , function(req,res){
 });
 
 app.get('/groupJoin' , function(req,res){
-  res.render('groupJoin')
+  console.log(clients);
+  res.render('groupJoin',{clients:clients})
 })
 
 io.on('connection', function(socket){
@@ -74,9 +78,15 @@ io.on('connection', function(socket){
   // });
   socket.on('setCurrentUser', function(username){
     console.log('username is ' + username);
-    socket.username = username;
+    clients.push(username);
+    //socket.username = username;
     //socket.set('socketname', username);
   });
+
+  // socket.on('disconnect', function(username){
+  //   console.log('a user has disconnected')
+  //   clients.splice(clients.indexOf(username),1);
+  // })
 
 });
 

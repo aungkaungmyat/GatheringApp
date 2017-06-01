@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="/assets/styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <form id="login-form" method="POST" action='/select' onsubmit="currentUser()">
+    <form name='login-form' id="login-form" method="POST" action='/select' >
       <label for="usrname">Enter your name: </label>
       <input type="text" name="usrname" id="usrname"><br>
       <label for="password">Enter your password: </label>
@@ -22,11 +22,17 @@
     <script>
     var socket = io();
 
-    function currentUser(){
-      var uname = document.getElementById('usrname').value;
-      //console.log('username is' + usrname);
-      socket.emit('setCurrentUser',uname);
-    }
+    // function currentUser(){
+    //   var uname = document.getElementById('usrname').value;
+    //   console.log('username is' + usrname);
+    //   socket.emit('setCurrentUser',uname);
+    // }
+    $('form[name="login-form"]').submit(function(event){
+     //console.log('got clicked');
+     var uname = document.getElementById('usrname').value;
+       console.log('username is' + usrname);
+       socket.emit('setCurrentUser',uname);
+});
 
     </script>
   </body>
