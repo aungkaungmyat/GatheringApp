@@ -40,7 +40,7 @@ app.get('/signUp',function(req,res){
 app.post('/select',urlencodedParser,function(req,res){
     Person.findOne({usrname:req.body.usrname},function(error,doc){
       if(doc){
-      console.log(doc);
+      //console.log(doc);
       if(doc.password == req.body.password){
       req.session.uname = req.body.usrname;
       res.render('select', {userinfo : req.body} );
@@ -67,9 +67,15 @@ app.get('/groupJoin' , function(req,res){
 
 io.on('connection', function(socket){
   console.log('a user connected');
-  console.log(io.sockets.clients());
-  socket.on('currentUser', function(username){
+  //console.log(io.sockets.clients());
+
+  // socket.on('currentUser', function(username){
+  //   socket.username = username;
+  // });
+  socket.on('setCurrentUser', function(username){
+    console.log('username is ' + username);
     socket.username = username;
+    //socket.set('socketname', username);
   });
 
 });
