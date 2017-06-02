@@ -13,14 +13,29 @@
     <p>Current location is</p>
     <p id='latAndLong'></p>
     <div id="map"></div>
-    <script>
+    <!-- <script>
+
   					var x = document.getElementById("latAndLong");
             var uluru;
 
   					window.onload = function(){
   						navigator.geolocation.getCurrentPosition(showPosition);
-  					}
+  					};
 
+            var local_data = <%- JSON.stringify(clients) %>;
+            const pep =  <%- Person %>;
+            console.log(local_data);
+            console.log("length is " + local_data.length);
+            for(var i = 0 ; i < local_data.length ; i++){
+              console.log("local data is " + local_data[i]);
+              pep.findOne({usrname:local_data[i]},function(error,doc){
+                console.log('got in here');
+                if(doc){
+                  doc.lat = position.coords.latitude;
+                  doc.lng = position.coords.longitude;
+                }
+              })
+            }
   					function showPosition(position) {
   					    x.innerHTML = "Latitude: " + position.coords.latitude +
   					    "<br>Longitude: " + position.coords.longitude;
@@ -34,8 +49,13 @@
                   position: uluru,
                   map: map
                 });
-  					}
-  		</script>
+  					};
+  		</script> -->
+      <script>
+  var local_data= <%- JSON.stringify(clients) %>;
+  console.log('local_data is ' + local_data);
+</script>
+      <script src="/controllers/groupJoin.js"></script>
       <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFfdUNgAXnvosFCsyVy1ZoW8B01MQtUrI">
       </script>

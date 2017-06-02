@@ -25,6 +25,8 @@ app.use(session({
 
 app.use('/assets' , express.static('assets'));
 
+app.use('/controllers' , express.static('controllers'));
+
 app.get('/',function(req,res){
   res.render('index');
 });
@@ -41,10 +43,12 @@ app.get('/signUp',function(req,res){
 });
 
 app.post('/select',urlencodedParser,function(req,res){
+    //console.log(req.body);
     Person.findOne({usrname:req.body.usrname},function(error,doc){
       if(doc){
       //console.log(doc);
       if(doc.password == req.body.password){
+      // Person.update({'_id':doc._id})
       req.session.uname = req.body.usrname;
       res.render('select', {userinfo : req.body} );
       }
@@ -66,7 +70,7 @@ app.get('/groupCreate' , function(req,res){
 
 app.get('/groupJoin' , function(req,res){
   console.log(clients);
-  res.render('groupJoin',{clients:clients})
+  res.render('groupJoin',{clients:clients , Person:Person})
 })
 
 io.on('connection', function(socket){

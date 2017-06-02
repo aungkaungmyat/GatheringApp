@@ -2,6 +2,7 @@
 <html>
   <head>
   <link rel="stylesheet" href="/assets/styles.css" rel="stylesheet" type="text/css">
+  <!-- <scrpit src="jquery-3.2.1.min.js"></scrpit> -->
   </head>
   <body>
     <form name='login-form' id="login-form" method="POST" action='/select' >
@@ -9,7 +10,10 @@
       <input type="text" name="usrname" id="usrname"><br>
       <label for="password">Enter your password: </label>
       <input type="text" name="password"><br>
+      <input type="hidden" name="lat" id="lat">
+      <input type="hidden" name="lng" id="lng">
       <input type="submit" value="submit">
+
     </form>
     <form action="/signUp" id="signUp-form" method="GET">
       <input type="submit" value="signUp">
@@ -18,22 +22,36 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
     var socket = io();
 
+    window.onload = function(){
+      navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    var lat;
+    var lng;
+
+    function showPosition(position) {
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+      document.getElementById('lat').value = lat;
+      document.getElementById('lng').value = lng;
+      console.log('lat is: ' + document.getElementById('lat').value + ' and lng is ' + document.getElementById('lng').value);
+    }
     // function currentUser(){
     //   var uname = document.getElementById('usrname').value;
     //   console.log('username is' + usrname);
     //   socket.emit('setCurrentUser',uname);
     // }
+    $(document).ready(function() {
     $('form[name="login-form"]').submit(function(event){
-     //console.log('got clicked');
      var uname = document.getElementById('usrname').value;
        console.log('username is' + usrname);
        socket.emit('setCurrentUser',uname);
 });
-
+      });
     </script>
   </body>
 </html>

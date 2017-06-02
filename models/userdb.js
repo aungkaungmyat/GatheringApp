@@ -10,6 +10,14 @@ const personSchema = new Schema({
   },
   password:{
     type: String
+  },
+  lat:{
+    type: Number,
+    default: 0
+  },
+  lng:{
+    type: Number,
+    default: 0
   }
 });
 
