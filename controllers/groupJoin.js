@@ -5,8 +5,8 @@ window.onload = function(){
   navigator.geolocation.getCurrentPosition(showPosition);
 };
 
-console.log('testing if local_data is ' + local_data);
-console.log('pep inside is ' + pep);
+
+//console.log('pep inside is ' + pep);
 // console.log('clients are '+ clients);
 // var local_data = <%- JSON.stringify(clients) %>;
 // const pep =  <%- Person %>;
@@ -27,10 +27,18 @@ function showPosition(position) {
     "<br>Longitude: " + position.coords.longitude;
     uluru = {lat: position.coords.latitude, lng: position.coords.longitude};
     //console.log(uluru);
+    console.log('testing if local_data is ' + local_data);
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 18,
       center: uluru
     });
+    for(var j = 0 ;  j <  local_data.length ; j++){
+      var point =  {lat: local_data[j].lat, lng: local_data[j].lng};
+      var marker = new google.maps.Marker({
+        position: point,
+        map: map
+      });
+    }
     var marker = new google.maps.Marker({
       position: uluru,
       map: map

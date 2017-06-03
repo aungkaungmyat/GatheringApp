@@ -72,8 +72,12 @@ app.get('/groupCreate' , function(req,res){
 });
 
 app.get('/groupJoin' , function(req,res){
-  console.log(clients);
-  res.render('groupJoin',{clients:clients , Person:Person})
+  //console.log(clients);
+  Person.find({},function(err,data){
+    if(err) throw err;
+    res.render('groupJoin',{data:data})
+  })
+
 })
 
 app.post('/createSuccess' ,urlencodedParser, function(req,res){
@@ -84,7 +88,7 @@ app.post('/createSuccess' ,urlencodedParser, function(req,res){
     if(doc){
     dbuname = doc.usrname;
     dbpassword =  doc.password;
-    
+
     console.log('db username and password are '+dbuname + ' and ' + dbpassword);
     var updatedData = {
       usrname: dbuname,

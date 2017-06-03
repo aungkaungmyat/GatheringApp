@@ -22,10 +22,7 @@
   						navigator.geolocation.getCurrentPosition(showPosition);
   					};
 
-            var local_data = <%- JSON.stringify(clients) %>;
-            const pep =  <%- Person %>;
-            console.log(local_data);
-            console.log("length is " + local_data.length);
+
             for(var i = 0 ; i < local_data.length ; i++){
               console.log("local data is " + local_data[i]);
               pep.findOne({usrname:local_data[i]},function(error,doc){
@@ -52,10 +49,9 @@
   					};
   		</script> -->
       <script>
-  var local_data= <%- JSON.stringify(clients) %>;
-  console.log('local_data is ' + local_data);
-  const pep =  <%- Person %>;
-  console.log('pep is' + pep);
+  var local_data = <%- JSON.stringify(data) %>;
+
+  //console.log('local_data is ' + local_data[0].usrname);
 </script>
       <script src="/controllers/groupJoin.js"></script>
       <script async defer
