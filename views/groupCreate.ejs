@@ -5,7 +5,7 @@
 	</head>
 	<body>
     <p><%=uname%> , what types of groups would you like to make</p>
-		<form>
+		<form name='creategrp-form' id="creategrp-form" method="POST" action='/createSuccess'>
   Numbers of participants:
   <input type="text" name="numParticipants"><br>
   Wishlist:
@@ -16,8 +16,11 @@
   <input type="checkbox" name="Rank" value="Rank"> Rank<br>
   Time to Start:
   <input type="text" name="StartTime"><br>
+	Latitude:<input type="text" name="lat" id="lat"><br>
+	Longitude: <input type="text" name="lng" id="lng"><br>
+  <input type="submit" value="submit"></button>
 </form>
-		<button type="button">Submit</button>
+
 
 	</body>
 </html>

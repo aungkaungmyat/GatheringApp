@@ -50,6 +50,7 @@ app.post('/select',urlencodedParser,function(req,res){
       if(doc.password == req.body.password){
       // Person.update({'_id':doc._id})
       req.session.uname = req.body.usrname;
+      req.session._id = doc._id;
       res.render('select', {userinfo : req.body} );
       }
       else{
@@ -65,6 +66,8 @@ app.post('/select',urlencodedParser,function(req,res){
 
 app.get('/groupCreate' , function(req,res){
   //console.log('socket user name is '+ socket.username);
+  //console.log(req.session._id);
+  //var updatedData = {username}
   res.render('groupCreate' , {uname : req.session.uname})
 });
 
@@ -72,6 +75,35 @@ app.get('/groupJoin' , function(req,res){
   console.log(clients);
   res.render('groupJoin',{clients:clients , Person:Person})
 })
+
+app.post('/createSuccess' ,urlencodedParser, function(req,res){
+  var dbuname;
+  var dbpassword;
+
+  Person.findOne({_id:req.session._id}).then(function(doc){
+    if(doc){
+    dbuname = doc.usrname;
+    dbpassword =  doc.password;
+    
+    console.log('db username and password are '+dbuname + ' and ' + dbpassword);
+    var updatedData = {
+      usrname: dbuname,
+      password: dbpassword,
+      lat: Number(req.body.lat),
+      lng: Number(req.body.lng)
+    }
+    Person.findByIdAndUpdate({_id:req.session._id},updatedData).then(function(){
+      Person.findOne({_id:req.session._id}).then(function(doc){
+        res.render('createSuccess', {data:doc})
+      })
+    });
+    }
+  })
+//   Person.findOne({_id:req.session._id}).then(function(doc){
+//
+// });
+
+});
 
 io.on('connection', function(socket){
   console.log('a user connected');

@@ -1,4 +1,3 @@
-var mongoose = require('mongoose');
 var x = document.getElementById("latAndLong");
 var uluru;
 
@@ -7,6 +6,7 @@ window.onload = function(){
 };
 
 console.log('testing if local_data is ' + local_data);
+console.log('pep inside is ' + pep);
 // console.log('clients are '+ clients);
 // var local_data = <%- JSON.stringify(clients) %>;
 // const pep =  <%- Person %>;
