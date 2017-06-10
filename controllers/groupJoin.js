@@ -35,6 +35,7 @@ function showPosition(position) {
     for(var j = 0 ;  j <  local_data.length ; j++){
       var point =  {lat: local_data[j].lat, lng: local_data[j].lng};
       var marker = new google.maps.Marker({
+        draggable: true,
         position: point,
         map: map
       });

@@ -1,2 +1,74 @@
-body{background: skyblue; font-family: verdana; color: #fff; padding: 30px;}
-p{font-size: 16px; text-align: center;}
+body {
+  background: #d86351;
+  font-family: verdana;
+  color: #fff;
+  padding: 30px;
+}
+
+p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.login-page {
+  position: absolute;
+  width: 500px;
+  height: 350px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -175px 0 0 -250px;
+  /*background: pink;*/
+}
+
+input[type="text"] {
+  background: transparent;
+  border: 1px groove #8cecf7;
+}
+
+#logo {
+  width: 75px;
+  height: 75px;
+  margin-left: 200px;
+}
+
+.userInputs {
+  padding: 10px;
+}
+
+
+/* enable absolute positioning */
+
+.inner-addon {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+/* style glyph */
+
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 15px;
+  pointer-events: none;
+}
+
+
+/* align glyph */
+
+.left-addon .glyphicon {
+  left: 0px;
+}
+
+
+/* add padding  */
+
+.left-addon input {
+  padding-left: 40px;
+  height: 45px;
+}
+
+#submitbut{
+  margin-left: 43%;
+}

@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" href="/assets/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/assets/styles.css" rel="stylesheet" type="text/css">
   <!-- <scrpit src="jquery-3.2.1.min.js"></scrpit> -->
   </head>
   <body>
+    <div class="login-page">
+    <img src="/assets/img/login.png" alt="" id="logo">
+
     <form name='login-form' id="login-form" method="POST" action='/select' >
-      <label for="usrname">Enter your name: </label>
-      <input type="text" name="usrname" id="usrname"><br>
-      <label for="password">Enter your password: </label>
-      <input type="text" name="password"><br>
+      <!-- <label for="usrname">Enter your name: </label> -->
+      <!-- <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input type="text" name="usrname" class="form-control" placeholder="Username" id="usrname">
+      </div> -->
+      <div class="userInputs">
+        <div class="inner-addon left-addon">
+          <i class="glyphicon glyphicon-user"></i>
+          <input type="text" name="usrname" class="form-control" placeholder="Username" id="usrname"/>
+        </div>
+        <br>
+        <div class="inner-addon left-addon">
+          <i class="glyphicon glyphicon-lock"></i>
+          <input type="text" name="password" class="form-control" placeholder="Password" id="password"/>
+        </div>
+      </div>
+
+
+      <!-- <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input type="text" name="password" class="form-control" placeholder="Password" id="password"><br>
+      </div> -->
+
+
       <input type="hidden" name="lat" id="lat">
       <input type="hidden" name="lng" id="lng">
-      <input type="submit" value="submit">
+      <input type="submit" value="submit" id="submitbut">
 
     </form>
     <form action="/signUp" id="signUp-form" method="GET">
       <input type="submit" value="signUp">
     </form>
+    </div>
+    <span class="glyphicon">&#xe008;</span>
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
