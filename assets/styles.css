@@ -90,3 +90,15 @@ input[type="text"] {
   margin: 0 auto;
   border-radius: 25px;
 }
+
+#signUpLink{
+  display: block;
+  margin: 0 auto;
+  margin-left: 180px;
+  margin-top: 20px;
+
+}
+
+#signUpLink a{
+  color: pink;
+}

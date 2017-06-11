@@ -41,11 +41,17 @@
       <input type="submit" value="Log In" id="submitbut">
 
     </form>
-    <form action="/signUp" id="signUp-form" method="GET">
-      <input type="submit" value="signUp">
+
+    <form action="/signUp" id="signUp-form"  method="GET">
+      <!-- <input type="submit" value="signUp"> -->
+      <div id="signUpLink">
+        <a href="#"  onclick="document.forms['signUp-form'].submit();return false;">Create an account?</a>
+      </div>
+
     </form>
+
     </div>
-    <span class="glyphicon">&#xe008;</span>
+
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
