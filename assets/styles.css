@@ -22,8 +22,18 @@ p {
 }
 
 input[type="text"] {
-  background: transparent;
+  /*background: transparent;*/
+  background: none;
   border: 1px groove #8cecf7;
+}
+
+.userInputs ::-webkit-input-placeholder { /* Chrome */
+  color: white;
+  transition: opacity 250ms ease-in-out;
+}
+
+.userInputs:hover{
+  background: #DB7463;
 }
 
 #logo {
