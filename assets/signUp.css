@@ -28,12 +28,22 @@ h1{
   text-align: center;
 }
 
-#firstH{
-  margin-left: -150px;
+#motto{
+  margin-top: 25px;
+  display: block;
+  height: 220px;
+
+  /*background: pink;*/
 }
 
-#forthH{
+#firstH{
+  margin-left: -125px;
+  padding-bottom: 15px;
+}
+
+#secondH{
   margin-left: 100px;
+  padding-top: 15px;
 }
 
 
