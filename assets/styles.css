@@ -1,6 +1,6 @@
 body {
   background: #d86351;
-  font-family: verdana;
+  font-size: 16px;
   color: #fff;
   padding: 30px;
 }
@@ -32,8 +32,9 @@ input[type="text"] {
   transition: opacity 250ms ease-in-out;
 }
 
-.userInputs:hover{
+.userInputs input[type='text']:hover{
   background: #DB7463;
+  color: white;
 }
 
 #logo {
@@ -51,7 +52,7 @@ input[type="text"] {
 
 .inner-addon {
   position: relative;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -60,7 +61,7 @@ input[type="text"] {
 
 .inner-addon .glyphicon {
   position: absolute;
-  padding: 15px;
+  padding: 16.66px;
   pointer-events: none;
 }
 
@@ -75,10 +76,17 @@ input[type="text"] {
 /* add padding  */
 
 .left-addon input {
-  padding-left: 40px;
-  height: 45px;
+  padding-left: 47px;
+  height: 50px;
 }
 
 #submitbut{
-  margin-left: 43%;
+  display: block;
+  width: 60%;
+  height: 45px;
+  background: white;
+  color: #d86351;
+  font-weight: bold;
+  margin: 0 auto;
+  border-radius: 25px;
 }
