@@ -7,7 +7,21 @@
   <link rel="stylesheet" href="/assets/signUp.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Welcome from the signup page</h1>
+    <nav>
+      <form action="/" id="login-form" method="GET">
+        <a href="#"  onclick="document.forms['login-form'].submit();return false;">
+          <div id="goBack">
+            <img src="/assets/img/left-arrow-key.png" alt="" id="arrow">
+            <span>Back</span>
+          </div>
+        </a>
+      </form>
+
+    </nav>
+    <h1 id="firstH">Let's Gather</h1>
+    <h1 id="secondH">Create Better</h1>
+    <!-- <h1 id="thirdH">Create</h1>
+    <h1 id="forthH">Better</h1> -->
     <div class="signUp-page">
       <img src="/assets/img/login.png" alt="" id="logo">
       <form id="signUp-submit" method="POST" action='/'>

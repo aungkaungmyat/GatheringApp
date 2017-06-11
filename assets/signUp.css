@@ -5,6 +5,38 @@ body {
   padding: 30px;
 }
 
+#goBack{
+  height: 30px;
+  width: 30px;
+  display: inline;
+}
+
+#login-form a{
+  text-decoration: none;
+  color: white;
+}
+
+#arrow{
+  height: 30px;
+  width: 30px;
+
+}
+
+h1{
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+}
+
+#firstH{
+  margin-left: -150px;
+}
+
+#forthH{
+  margin-left: 100px;
+}
+
+
 .signUp-page {
   position: absolute;
   width: 500px;
@@ -26,6 +58,7 @@ input[type="text"] {
   /*background: transparent;*/
   background: none;
   border: 1px groove #8cecf7;
+  color: white;
 }
 
 .userInputs ::-webkit-input-placeholder { /* Chrome */
