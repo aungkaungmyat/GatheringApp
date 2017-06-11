@@ -5,12 +5,7 @@ body {
   padding: 30px;
 }
 
-p {
-  font-size: 16px;
-  text-align: center;
-}
-
-.login-page {
+.signUp-page {
   position: absolute;
   width: 500px;
   height: 350px;
@@ -26,7 +21,6 @@ p {
   height: 75px;
   margin-left: 200px;
 }
-
 
 input[type="text"] {
   /*background: transparent;*/
@@ -90,16 +84,4 @@ input[type="text"] {
   font-weight: bold;
   margin: 0 auto;
   border-radius: 25px;
-}
-
-#signUpLink{
-  display: block;
-  margin: 0 auto;
-  margin-left: 180px;
-  margin-top: 20px;
-
-}
-
-#signUpLink a{
-  color: pink;
 }

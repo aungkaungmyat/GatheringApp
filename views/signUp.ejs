@@ -3,17 +3,33 @@
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
-  <link rel="stylesheet" href="/assets/styles.css" rel="stylesheet" type="text/css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/assets/signUp.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <h1>Welcome from the signup page</h1>
-    <form id="signUp-submit" method="POST" action='/'>
-      <label for="usrname">Enter your name: </label>
-      <input type="text" name="usrname"><br>
-      <label for="password">Enter your password: </label>
-      <input type="text" name="password"><br>
-      <input type="submit" value="submit">
-    </form>
+    <div class="signUp-page">
+      <img src="/assets/img/login.png" alt="" id="logo">
+      <form id="signUp-submit" method="POST" action='/'>
+        <!-- <label for="usrname">Enter your name: </label>
+        <input type="text" name="usrname"><br>
+        <label for="password">Enter your password: </label>
+        <input type="text" name="password"><br> -->
+        <div class="userInputs">
+          <div class="inner-addon left-addon">
+            <i class="glyphicon glyphicon-user"></i>
+            <input type="text" name="usrname" class="form-control" placeholder="Username" id="usrname"/>
+          </div>
+
+          <div class="inner-addon left-addon">
+            <i class="glyphicon glyphicon-lock"></i>
+            <input type="text" name="password" class="form-control" placeholder="Password" id="password"/>
+          </div>
+        </div>
+
+        <input type="submit" value="Sign Up" id="submitbut">
+      </form>
+    </div>
+
   </body>
 </html>
