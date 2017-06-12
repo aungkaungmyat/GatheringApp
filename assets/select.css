@@ -6,6 +6,8 @@ p{
    text-align: center;
 }
 
+
+
 .main-wrap{
    /*width: 100%;*/
    overflow: hidden;
@@ -14,23 +16,28 @@ p{
 
 }
 
+
 .left-column{
-   width: 48%;
+   /*width: 48%;*/
    height: 500px;
    /*background: red;*/
    margin-top: 10vh;
-   margin-left: 1%;
-   float: left;
+   /*margin-left: 1%;*/
+   /*float: left;*/
 }
 
 .right-column{
 
-   width: 48%;
+   /*width: 48%;*/
    height: 500px;
    /*background: white;*/
    margin-top: 10vh;
-   margin-right: 1%;
-   float: right;
+   /*margin-right: 1%;*/
+   /*float: right;*/
+}
+
+.centered{
+   top: 50%;
 }
 
 .createButton{
@@ -47,8 +54,9 @@ p{
    font-family: verdana;
    text-transform: uppercase;
    animation: animate 3s linear infinite;
-   margin: 250px 0 0 450px;
-   transform: translate(-50%,-50%);
+   /*margin: 250px 0 0 450px;*/
+   /*transform: translate(-50%,-50%);*/
+   margin: 0 auto;
 }
 
 .joinButton{
@@ -65,8 +73,8 @@ p{
    font-family: verdana;
    text-transform: uppercase;
    animation: animate 3s linear infinite;
-   margin: 250px 0 0 430px;
-   transform: translate(-50%,-50%);
+   /*margin: 250px 0 0 450px;
+   transform: translate(-50%,-50%);*/
 }
 
 @keyframes animate {

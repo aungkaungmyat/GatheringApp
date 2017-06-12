@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" href="/assets/select.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/assets/select.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+    <!-- <div class="row">
+      <div class="col">1st col</div>
+      <div class="col">2nd cols</div>
+    </div> -->
     <p>Welcome from selection page <%=userinfo.usrname%></p>
-    <div class="main-wrap">
+    <div class="main-wrap row">
       <div class="vertical-line"></div>
-      <div class="left-column">
-          <form id="create-form" method="GET" action="/groupCreate">
-            <!-- <input type="submit" value="Create Group" class="createButton"> -->
-            <a href="#"  onclick="document.forms['create-form'].submit();return false;">
-            <div class="createButton">Create</div>
-            </a>
-          </form>
+      <div class="left-column col col-md-6 col-sm-6">
+          <div class="col col-md-4 col-sm-4"></div>
+          <div class="col col-md-4 col-sm-4 centered">
+            <form id="create-form" method="GET" action="/groupCreate">
+              <!-- <input type="submit" value="Create Group" class="createButton"> -->
+              <a href="#"  onclick="document.forms['create-form'].submit();return false;">
+              <div class="createButton">Create</div>
+              </a>
+            </form>
+          </div>
+          <div class="col col-md-4 col-sm-4"></div>
+
+
       </div>
-      <div class="right-column">
+      <div class="right-column col col-md-6 col-sm-6">
+        <div class="col col-md-4 col-sm-4"></div>
+        <div class="col col-md-4 col-sm-4 centered">
           <form id="join-form" method="GET" action="/groupJoin">
             <!-- <input type="submit" value="Join Group" class="joinButton"> -->
             <a href="#"  onclick="document.forms['join-form'].submit();return false;">
             <div class="joinButton">Join</div>
             </a>
           </form>
+        </div>
+        <div class="col col-md-4 col-sm-4"></div>
+
       </div>
     </div>
 
