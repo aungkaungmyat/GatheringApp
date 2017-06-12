@@ -8,11 +8,11 @@ function showPosition(position) {
   // var lat = position.coords.latitude;
   // var lng = position.coords.longitude;
     uluru = {lat: position.coords.latitude, lng: position.coords.longitude};
-    // document.getElementById('lat').value = position.coords.latitude;
-    $('input[name="lat"]').val(position.coords.latitude);
-    // document.getElementById('lng').value = position.coords.longitude;
-    $('input[name="lng"]').val(position.coords.longitude);
-    console.log('lat is ' + document.getElementById('lat').value);
+    document.getElementById('lat').value = position.coords.latitude;
+    // $('input[name="lat"]').val(position.coords.latitude);
+    document.getElementById('lng').value = position.coords.longitude;
+    // $('input[name="lng"]').val(position.coords.longitude);
+
 
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 18,
