@@ -10,14 +10,14 @@ p{
    /*width: 100%;*/
    overflow: hidden;
    height: 90vh;
-   background: pink;
+   /*background: pink;*/
 
 }
 
 .left-column{
    width: 48%;
    height: 500px;
-   background: red;
+   /*background: red;*/
    margin-top: 10vh;
    margin-left: 1%;
    float: left;
@@ -27,7 +27,7 @@ p{
 
    width: 48%;
    height: 500px;
-   background: white;
+   /*background: white;*/
    margin-top: 10vh;
    margin-right: 1%;
    float: right;
@@ -36,14 +36,63 @@ p{
 .createButton{
    /*top: 50%;
    left: 50%;*/
-   margin: 250px 0 0 270px;
+   width: 100px;
+   height: 100px;
+   background: #ff6d4a;
+   border-radius: 50px;
+   color: #fff;
+   font-size: 20px;
+   text-align: center;
+   line-height: 100px;
+   font-family: verdana;
+   text-transform: uppercase;
+   animation: animate 3s linear infinite;
+   margin: 250px 0 0 450px;
+   transform: translate(-50%,-50%);
 }
 
 .joinButton{
    /*top: 50%;
    left: 50%;*/
-   margin: 250px 0 0 270px;
+   width: 100px;
+   height: 100px;
+   background: #ff6d4a;
+   border-radius: 50px;
+   color: #fff;
+   font-size: 20px;
+   text-align: center;
+   line-height: 100px;
+   font-family: verdana;
+   text-transform: uppercase;
+   animation: animate 3s linear infinite;
+   margin: 250px 0 0 430px;
+   transform: translate(-50%,-50%);
 }
+
+@keyframes animate {
+   0%{
+      box-shadow: 0 0 0 0  rgba(255,109,74,.7), 0 0 0 0  rgba(255,109,74,.7);
+   }
+   40%{
+      box-shadow: 0 0 0 50px  rgba(255,109,74,0), 0 0 0 0  rgba(255,109,74,.7);
+   }
+   80%{
+      box-shadow: 0 0 0 50px  rgba(255,109,74,0), 0 0 0 30px  rgba(255,109,74,0);
+   }
+   100%{
+      box-shadow: 0 0 0 0  rgba(255,109,74,0), 0 0 0 30px  rgba(255,109,74,0);
+   }
+}
+
+#create-form a, #join-form a{
+   text-decoration: none;
+}
+
+/*.joinButton{
+   /*top: 50%;
+   left: 50%;
+   margin: 250px 0 0 270px;
+}*/
 
 div.vertical-line{
    position: absolute;

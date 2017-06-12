@@ -9,12 +9,18 @@
       <div class="vertical-line"></div>
       <div class="left-column">
           <form id="create-form" method="GET" action="/groupCreate">
-            <input type="submit" value="Create Group" class="createButton">
+            <!-- <input type="submit" value="Create Group" class="createButton"> -->
+            <a href="#"  onclick="document.forms['create-form'].submit();return false;">
+            <div class="createButton">Create</div>
+            </a>
           </form>
       </div>
       <div class="right-column">
           <form id="join-form" method="GET" action="/groupJoin">
-            <input type="submit" value="Join Group" class="joinButton">
+            <!-- <input type="submit" value="Join Group" class="joinButton"> -->
+            <a href="#"  onclick="document.forms['join-form'].submit();return false;">
+            <div class="joinButton">Join</div>
+            </a>
           </form>
       </div>
     </div>
