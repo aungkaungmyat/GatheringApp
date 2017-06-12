@@ -34,14 +34,21 @@ function showPosition(position) {
     });
     for(var j = 0 ;  j <  local_data.length ; j++){
       var point =  {lat: local_data[j].lat, lng: local_data[j].lng};
+      var icon = {
+    url: '/assets/img/mapMarker.png', // url
+    scaledSize: new google.maps.Size(75, 75),
+    fillColor: '#ff0000'
+};
       var marker = new google.maps.Marker({
         draggable: true,
         position: point,
-        map: map
+        map: map,
+        icon: icon
       });
     }
     var marker = new google.maps.Marker({
       position: uluru,
-      map: map
+      map: map,
+      icon: icon
     });
 };

@@ -10,15 +10,15 @@ const personSchema = new Schema({
   },
   password:{
     type: String
-  },
-  lat:{
-    type: Number,
-    default: 0
-  },
-  lng:{
-    type: Number,
-    default: 0
   }
+  // lat:{
+  //   type: Number
+  //   // default: 0
+  // },
+  // lng:{
+  //   type: Number
+  //   // default: 0
+  // }
 });
 
 const Person = mongoose.model('person',personSchema);
