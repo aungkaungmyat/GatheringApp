@@ -2,15 +2,40 @@ body{
    background: #16a085;
 }
 
-hr{
-   color: red;
+p{
+   text-align: center;
 }
 
-.vertical-line{
-      position: absolute;
-      width: 1px; /* Line width */
-      background-color: #fff; /* Line color */
-      height: 700px; /* Override in-line if you want specific height. */
-      margin-top: 20px;
-      margin-left: 50%;
-    }
+.main-wrap{
+   /*width: 100%;*/
+   overflow: hidden;
+   height: 90vh;
+   background: pink;
+
+}
+
+.left-column{
+   width: 49%;
+   height: 500px;
+   background: red;
+   margin-top: 10vh;
+   float: left;
+}
+
+.right-column{
+
+   width: 49%;
+   height: 500px;
+   background: white;
+   margin-top: 10vh;
+   float: right;
+}
+
+div.vertical-line{
+   position: absolute;
+   width: 1px; /* Line width */
+   background-color: #fff; /* Line color */
+   height: 700px; /* Override in-line if you want specific height. */
+   margin-top: 20px;
+   left: 50%;
+}

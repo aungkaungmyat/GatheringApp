@@ -5,14 +5,23 @@
   </head>
   <body>
     <p>Welcome from selection page <%=userinfo.usrname%></p>
-    <form id="create-form" method="GET" action="/groupCreate">
-      <input type="submit" value="Create Group">
-    </form>
-    <form id="join-form" method="GET" action="/groupJoin">
-      <input type="submit" value="Join Group">
-    </form>
+    <div class="main-wrap">
+      <div class="vertical-line"></div>
+      <div class="left-column">
+        <form id="create-form" method="GET" action="/groupCreate">
+          <input type="submit" value="Create Group">
+        </form>
+      </div>
+      <div class="right-column">
+        <form id="join-form" method="GET" action="/groupJoin">
+          <input type="submit" value="Join Group">
+        </form>
+      </div>
+    </div>
+
+
     <!-- <hr width="1" size="500"> -->
-    <div class="vertical-line" />
+
 
   </body>
 </html>
