@@ -56,7 +56,7 @@ function showPosition(position) {
     document.getElementById('current').innerHTML = '<p>Marker dropped: Current Lat: ' + evt.latLng.lat().toFixed(7) + ' Current Lng: ' + evt.latLng.lng().toFixed(7) + '</p>';
 });
 
-google.maps.event.addListener(marker, 'dragstart', function(evt){
+    google.maps.event.addListener(marker, 'dragstart', function(evt){
     document.getElementById('current').innerHTML = '<p>Currently dragging marker...</p>';
 });
 };

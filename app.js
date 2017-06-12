@@ -84,6 +84,7 @@ app.post('/createSuccess' ,urlencodedParser, function(req,res){
   var dbuname;
   var dbpassword;
 
+  console.log('reqbody is ' + req.body.lat);
   Person.findOne({_id:req.session._id}).then(function(doc){
     if(doc){
     dbuname = doc.usrname;
