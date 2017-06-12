@@ -15,20 +15,34 @@ p{
 }
 
 .left-column{
-   width: 49%;
+   width: 48%;
    height: 500px;
    background: red;
    margin-top: 10vh;
+   margin-left: 1%;
    float: left;
 }
 
 .right-column{
 
-   width: 49%;
+   width: 48%;
    height: 500px;
    background: white;
    margin-top: 10vh;
+   margin-right: 1%;
    float: right;
+}
+
+.createButton{
+   /*top: 50%;
+   left: 50%;*/
+   margin: 250px 0 0 270px;
+}
+
+.joinButton{
+   /*top: 50%;
+   left: 50%;*/
+   margin: 250px 0 0 270px;
 }
 
 div.vertical-line{
