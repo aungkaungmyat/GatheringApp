@@ -1,0 +1,16 @@
+body{
+   background: #16a085;
+}
+
+hr{
+   color: red;
+}
+
+.vertical-line{
+      position: absolute;
+      width: 1px; /* Line width */
+      background-color: #fff; /* Line color */
+      height: 700px; /* Override in-line if you want specific height. */
+      margin-top: 20px;
+      margin-left: 50%;
+    }
