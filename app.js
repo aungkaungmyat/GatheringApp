@@ -8,7 +8,7 @@ var io = require('socket.io')(server);
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 const Person = require('./models/userdb.js');
 
-//keepin track of alll the users
+//keepin track of all the users
 var clients = [];
 
 mongoose.connect('mongodb://localhost/Gatheringapp');
@@ -86,7 +86,9 @@ app.post('/createSuccess' ,urlencodedParser, function(req,res){
   var dbuname;
   var dbpassword;
 
-  console.log('reqbody is ' + req.body.lat);
+  console.log('lat is ' + req.body.lat);
+  console.log('dateTime is ' + req.body.dateTime);
+  // console.log('reqbody is' + req.body);
   Person.findOne({_id:req.session._id}).then(function(doc){
     if(doc){
     dbuname = doc.usrname;

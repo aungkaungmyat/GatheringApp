@@ -1,8 +1,13 @@
 var uluru;
 
 $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
+    $('#datetimepicker1').datetimepicker();
+});
+
+$('#submitBut').on('click', function() {
+   console.log($('#dateTime').val());
+   document.getElementById('dateTest').value = $('#dateTime').val();
+ });
 
 window.onload = function(){
   navigator.geolocation.getCurrentPosition(showPosition);

@@ -33,39 +33,27 @@
   <input type="text" name="StartTime"><br>
 	<input type="hidden" name="lat" id="lat"><br>
 	<input type="hidden" name="lng" id="lng"><br>
-  <input type="submit" value="submit"></button>
-</form>
-<!-- <div class="row">
+	<input type="hidden" name="dateTest" id="dateTest"><br>
+	<!-- for selecting time -->
+	<div class="row">
 			<div class='col-sm-6'>
-					<div class="form-group">
+					<!-- <div class="form-group"> -->
 							<div class='input-group date' id='datetimepicker1'>
-									<input type='text' class="form-control" />
+									<input type='text' id="dateTime" name="dateTime" class="form-control" />
 									<span class="input-group-addon">
 											<span class="glyphicon glyphicon-calendar"></span>
 									</span>
 							</div>
-					</div>
+					<!-- </div> -->
 			</div>
-	</div> -->
-	<div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <!-- <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script> -->
-    </div>
-</div>
+	</div>
+
+  <input id="submitBut" type="submit" value="submit"></button>
+</form>
+
+	<button id="test">click me</button>
+
+
 
 	<div id="current">Nothing Yet...</div>
 	<div id="map"></div>
