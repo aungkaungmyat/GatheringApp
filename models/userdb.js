@@ -18,6 +18,23 @@ const personSchema = new Schema({
   lng:{
     type: Number
     //  default: 0
+  },
+  activity: {
+    activityType:{
+      type: String
+    },
+    numPeople:{
+      type: Number
+    },
+    wishList:{
+      type: Boolean
+    },
+    startTime:{
+      type: String
+    },
+    endTime:{
+      type: String
+    }
   }
 });
 

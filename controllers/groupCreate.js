@@ -1,5 +1,9 @@
 var uluru;
 
+$(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+
 window.onload = function(){
   navigator.geolocation.getCurrentPosition(showPosition);
 };

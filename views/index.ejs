@@ -35,8 +35,8 @@
       </div> -->
 
 
-      <input type="hidden" name="lat" id="lat">
-      <input type="hidden" name="lng" id="lng">
+      <!-- <input type="hidden" name="lat" id="lat">
+      <input type="hidden" name="lng" id="lng"> -->
       <input type="submit" value="Log In" id="submitbut">
 
     </form>
@@ -60,19 +60,19 @@
     <script>
     var socket = io();
 
-    window.onload = function(){
-      navigator.geolocation.getCurrentPosition(showPosition);
-    }
-    var lat;
-    var lng;
-
-    function showPosition(position) {
-      var lat = position.coords.latitude;
-      var lng = position.coords.longitude;
-      document.getElementById('lat').value = lat;
-      document.getElementById('lng').value = lng;
-      console.log('lat is: ' + document.getElementById('lat').value + ' and lng is ' + document.getElementById('lng').value);
-    }
+    // window.onload = function(){
+    //   navigator.geolocation.getCurrentPosition(showPosition);
+    // }
+    // var lat;
+    // var lng;
+    //
+    // function showPosition(position) {
+    //   var lat = position.coords.latitude;
+    //   var lng = position.coords.longitude;
+    //   document.getElementById('lat').value = lat;
+    //   document.getElementById('lng').value = lng;
+    //   console.log('lat is: ' + document.getElementById('lat').value + ' and lng is ' + document.getElementById('lng').value);
+    // }
     // function currentUser(){
     //   var uname = document.getElementById('usrname').value;
     //   console.log('username is' + usrname);
