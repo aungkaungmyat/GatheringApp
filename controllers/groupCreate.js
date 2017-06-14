@@ -29,7 +29,7 @@ $(document).ready(function(){
     $.ajax({
           type: 'POST',
           url: '/createSuccess',
-          data: data,
+          data: data
           // success: function(data){
           //   //do something with the data via front-end framework
           //   // location.reload();

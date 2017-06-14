@@ -86,10 +86,7 @@ app.post('/createSuccess' ,urlencodedParser, function(req,res){
   var dbuname;
   var dbpassword;
 
-  console.log('lat is ' + req.body.lat);
-  // console.log('req body is ' + req.body);
-  // console.log('dateTime is ' + req.body.dateTime);
-  // console.log('reqbody is' + req.body);
+  // console.log('lat is ' + req.body.lat);
   Person.findOne({_id:req.session._id}).then(function(doc){
     if(doc){
     dbuname = doc.usrname;
@@ -100,7 +97,14 @@ app.post('/createSuccess' ,urlencodedParser, function(req,res){
       usrname: dbuname,
       password: dbpassword,
       lat: Number(req.body.lat),
-      lng: Number(req.body.lng)
+      lng: Number(req.body.lng),
+      activity: {
+        activityType: req.body.activityType,
+        numPeople: req.body.numPeople,
+        wishList: req.body.wishList,
+        startTime: req.body.startTime,
+        endTime: req.body.dateTest
+      }
     }
     Person.findByIdAndUpdate({_id:req.session._id},updatedData).then(function(){
       Person.findOne({_id:req.session._id}).then(function(doc){
