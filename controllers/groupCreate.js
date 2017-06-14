@@ -9,6 +9,39 @@ $('#submitBut').on('click', function() {
    document.getElementById('dateTest').value = $('#dateTime').val();
  });
 
+$(document).ready(function(){
+  $('#submitBut').on('click', function(){
+    var activityType = $('#activityType').val();
+    var numPeople = $('#numPeople').val();
+    var wishList = $('input[name="wishList"]:checked').val();
+    var startTime = $('#startTime').val();
+    var dateTest =  $('#dateTest').val();
+    var lat =  $('#lat').val();
+    var lng =  $('#lng').val();
+    var data = {activityType: activityType,
+                numPeople: numPeople,
+                wishList: wishList,
+                startTime: startTime,
+                dateTest: dateTest,
+                lat: lat,
+                lng: lng
+                };
+    $.ajax({
+          type: 'POST',
+          url: '/createSuccess',
+          data: data,
+          // success: function(data){
+          //   //do something with the data via front-end framework
+          //   // location.reload();
+          // }
+      });
+
+        // return false;
+  })
+})
+
+
+
 window.onload = function(){
   navigator.geolocation.getCurrentPosition(showPosition);
 };

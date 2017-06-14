@@ -21,16 +21,15 @@
 	<body>
     <p><%=uname%> , what types of groups would you like to make</p>
 		<form name='creategrp-form' id="creategrp-form" method="POST" action='/createSuccess'>
-  Numbers of participants:
-  <input type="text" name="numParticipants"><br>
+	<label for="activityType">Activity Type:</label>
+	<input type="text" name="activityType" id="activityType"><br>
+	Numbers of participants:
+  <input type="text" name="numPeople" id="numPeople"><br>
   Wishlist:
-  <input type="radio" name="Yes" value="Yes" checked> Yes
-  <input type="radio" name="No" value="No"> No<br>
-  Game Type:
-  <input type="checkbox" name="Normal" value="Normal"> Normal
-  <input type="checkbox" name="Rank" value="Rank"> Rank<br>
+  <input type="radio" name="wishList" value="1" checked> Yes
+  <input type="radio" name="wishList" value="0"> No<br>
   Time to Start:
-  <input type="text" name="StartTime"><br>
+  <input type="text" name="startTime" id="startTime"><br>
 	<input type="hidden" name="lat" id="lat"><br>
 	<input type="hidden" name="lng" id="lng"><br>
 	<input type="hidden" name="dateTest" id="dateTest"><br>

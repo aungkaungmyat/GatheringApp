@@ -87,7 +87,8 @@ app.post('/createSuccess' ,urlencodedParser, function(req,res){
   var dbpassword;
 
   console.log('lat is ' + req.body.lat);
-  console.log('dateTime is ' + req.body.dateTime);
+  // console.log('req body is ' + req.body);
+  // console.log('dateTime is ' + req.body.dateTime);
   // console.log('reqbody is' + req.body);
   Person.findOne({_id:req.session._id}).then(function(doc){
     if(doc){
