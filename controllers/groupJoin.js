@@ -17,8 +17,9 @@ function showPosition(position) {
     });
     for(var j = 0 ;  j <  local_data.length ; j++){
       var point =  {lat: local_data[j].lat, lng: local_data[j].lng};
-
+      var username = local_data[j].usrname
       var contentString = '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+            '<p>usrname is </p>'+ username +
             '<div id="bodyContent">'+
             '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
             'sandstone rock formation in the southern part of the '+
@@ -43,10 +44,24 @@ function showPosition(position) {
         map: map,
         icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
       });
-      marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
+      // marker.addListener('click', function() {
+      //     infowindow.open(map, marker);
+      //   });
+      google.maps.event.addListener(marker, 'mouseover', (function(marker) {
+           return function() {
+              //  var content = address;
+              //  infowindow.setContent(content);
+               infowindow.open(map, marker);
+               console.log('usrname is ' + username);
+           }
+         })(marker));
     }
+
+    function setMarkers(map,locations){
+      var marker;
+
+    }
+
     var marker = new google.maps.Marker({
       position: uluru,
       map: map,
