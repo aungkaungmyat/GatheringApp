@@ -53,13 +53,6 @@ function setMarkers(map,data){
       icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
     });
 
-    // marker.addListener('click', toggleBounce);
-    //
-    // function toggleBounce() {
-    //   console.log('got clicked')
-    //
-    //   }
-
     map.setCenter(marker.getPosition())
 
 
@@ -96,6 +89,3 @@ google.maps.event.addListener(marker,'mouseover', (function(marker){
 
 }
 }
-// function toggleBounce() {
-//
-//       }
