@@ -1,12 +1,22 @@
 var uluru;
 
 $(function () {
-    $('#datetimepicker1').datetimepicker();
+  $('#datetimepicker6').datetimepicker();
+      $('#datetimepicker7').datetimepicker({
+          useCurrent: false //Important! See issue #1075
+      });
+      $("#datetimepicker6").on("dp.change", function (e) {
+          $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+      });
+      $("#datetimepicker7").on("dp.change", function (e) {
+          $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+      });
 });
 
 $('#submitBut').on('click', function() {
-   console.log($('#dateTime').val());
-   document.getElementById('dateTest').value = $('#dateTime').val();
+  //  console.log($('#dateTime').val());
+   document.getElementById('startTime').value = $('#sTime').val();
+   document.getElementById('endTime').value = $('#eTime').val();
  });
 
 $(document).ready(function(){
@@ -15,14 +25,14 @@ $(document).ready(function(){
     var numPeople = $('#numPeople').val();
     var wishList = $('input[name="wishList"]:checked').val();
     var startTime = $('#startTime').val();
-    var dateTest =  $('#dateTest').val();
+    var endTime =  $('#endTime').val();
     var lat =  $('#lat').val();
     var lng =  $('#lng').val();
     var data = {activityType: activityType,
                 numPeople: numPeople,
                 wishList: wishList,
                 startTime: startTime,
-                dateTest: dateTest,
+                endTime: endTime,
                 lat: lat,
                 lng: lng
                 };

@@ -103,7 +103,7 @@ app.post('/createSuccess' ,urlencodedParser, function(req,res){
         numPeople: req.body.numPeople,
         wishList: req.body.wishList,
         startTime: req.body.startTime,
-        endTime: req.body.dateTest
+        endTime: req.body.endTime
       }
     }
     Person.findByIdAndUpdate({_id:req.session._id},updatedData).then(function(){

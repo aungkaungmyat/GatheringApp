@@ -28,17 +28,28 @@
   Wishlist:
   <input type="radio" name="wishList" value="1" checked> Yes
   <input type="radio" name="wishList" value="0"> No<br>
-  Time to Start:
-  <input type="text" name="startTime" id="startTime"><br>
+   <!-- Time to Start: -->
+  <input type="hidden" name="startTime" id="startTime"><br>
+	<input type="hidden" name="endTime" id="endTime"><br>
 	<input type="hidden" name="lat" id="lat"><br>
 	<input type="hidden" name="lng" id="lng"><br>
-	<input type="hidden" name="dateTest" id="dateTest"><br>
+
 	<!-- for selecting time -->
 	<div class="row">
 			<div class='col-sm-6'>
 					<!-- <div class="form-group"> -->
-							<div class='input-group date' id='datetimepicker1'>
-									<input type='text' id="dateTime" name="dateTime" class="form-control" />
+							<div class='input-group date' id='datetimepicker6'>
+									<input type='text' id="sTime" name="sTime" class="form-control" />
+									<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+							</div>
+					<!-- </div> -->
+			</div>
+			<div class='col-sm-6'>
+					<!-- <div class="form-group"> -->
+							<div class='input-group date' id='datetimepicker7'>
+									<input type='text' id="eTime" name="eTime" class="form-control" />
 									<span class="input-group-addon">
 											<span class="glyphicon glyphicon-calendar"></span>
 									</span>
@@ -50,7 +61,7 @@
   <input id="submitBut" type="submit" value="submit"></button>
 </form>
 
-	<button id="test">click me</button>
+	<!-- <button id="test">click me</button> -->
 
 
 
