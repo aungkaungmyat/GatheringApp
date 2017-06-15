@@ -15,7 +15,7 @@ function initMap(){
   var marker = new google.maps.Marker({
     position: uluru,
     map: map,
-    icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+    icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
   });
   google.maps.event.addListener(marker, 'dragend', function(evt){
   document.getElementById('current').innerHTML = '<p>Marker dropped: Current Lat: ' + evt.latLng.lat().toFixed(7) + ' Current Lng: ' + evt.latLng.lng().toFixed(7) + '</p>';
@@ -55,7 +55,7 @@ function setMarkers(map,data){
     map.setCenter(marker.getPosition())
 
 
-    var content = '<h1>' + usrname + '</h1>'+
+    var content = '<h1 class="heading">' + usrname + '</h1><hr>'+
                   '<p>Activity Type: ' + activityType + '</p>'+
                   '<p>Number of People Needed: ' + numPeople + '</p>'+
                   '<p>WishList: ' + wishList + '</p>'+
