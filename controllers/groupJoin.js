@@ -15,6 +15,7 @@ function initMap(){
   var marker = new google.maps.Marker({
     position: uluru,
     map: map,
+    animation: google.maps.Animation.DROP,
     icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
   });
   google.maps.event.addListener(marker, 'dragend', function(evt){
@@ -45,12 +46,19 @@ function setMarkers(map,data){
     var startTime =  data[i].activity.startTime;
     var endTime =  data[i].activity.endTime;
     latlngset = new google.maps.LatLng(lat, lng);
-    var marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
       map: map,
       title: usrname ,
       position: latlngset,
       icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
     });
+
+    // marker.addListener('click', toggleBounce);
+    //
+    // function toggleBounce() {
+    //   console.log('got clicked')
+    //
+    //   }
 
     map.setCenter(marker.getPosition())
 
@@ -69,9 +77,25 @@ google.maps.event.addListener(marker,'mouseover', (function(marker,content){
     return function() {
         infowindow.setContent(content);
         infowindow.open(map,marker);
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+        marker.setAnimation(null);
     };
 })(marker,content));
 
+google.maps.event.addListener(marker,'mouseover', (function(marker){
+    return function() {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
+    };
+})(marker));
 
-  }
+
+
 }
+}
+// function toggleBounce() {
+//
+//       }
