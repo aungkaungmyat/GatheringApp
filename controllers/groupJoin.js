@@ -59,6 +59,7 @@ function setMarkers(map,data){
                   '<p>Activity Type: ' + activityType + '</p>'+
                   '<p>Number of People Needed: ' + numPeople + '</p>'+
                   '<p>WishList: ' + wishList + '</p>'+
+                  '<p>StartTime: ' + startTime + '</p>'+
                   '<p>EndTime: ' + endTime + '</p>';
 
 
