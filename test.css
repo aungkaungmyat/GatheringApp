@@ -1,7 +1,24 @@
+/*@import url()*/
+
+html, body, .container {
+	height: 100%;
+  margin: 0;
+}
+
+body {
+	background: #3b3f45;
+	color: #fff;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: 'Raleway', Arial, sans-serif;
+	overflow: hidden;
+	overflow-y: scroll;
+	min-height: 590px;
+}
+
 .fs-form-wrap{
   position: relative;
   color: #fff;
-  background-color: #3b3f45;
   width: 100%;
   height: 100%;
 }
