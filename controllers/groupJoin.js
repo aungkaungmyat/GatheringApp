@@ -7,7 +7,7 @@ window.onload = function(){
 
 function initMap(){
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 18,
+    zoom: 15,
     center: uluru
   });
 
@@ -84,8 +84,5 @@ google.maps.event.addListener(marker,'mouseover', (function(marker){
       }
     };
 })(marker));
-
-
-
 }
 }
