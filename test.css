@@ -74,3 +74,30 @@ body {
 .fs-numbers .fs-number-current{
 	float: left;
 }
+/* Number indicator end */
+
+/*continue button*/
+button.fs-continue{
+	visibility: hidden;
+}
+
+.fs-show{
+	visibility: visible !important;
+}
+
+.fs-form-wrap button{
+	border: none;
+	background: none;
+}
+
+.fs-form-wrap button:focus{
+	outline: none;
+}
+
+button.fs-continue{
+	padding: 0.6em 1.5em;
+	border: 3px solid #232529;
+	border-radius: 40px;
+	font-weight: 700;
+	color: rgba(0,0,0,0.4);
+}

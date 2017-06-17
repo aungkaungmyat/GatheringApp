@@ -30,7 +30,7 @@ app.use('/controllers' , express.static('controllers'));
 app.use('/bower_components' , express.static('bower_components'))
 
 app.get('/',function(req,res){
-  res.render('test');
+  res.render('index');
 });
 
 app.post('/',urlencodedParser,function(req,res){
