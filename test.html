@@ -17,6 +17,14 @@
         <button class="fs-continue fs-show" v-on:click="add(1)">
           Continue
         </button>
+        <nav class="fs-nav-dots fs-show">
+          <button class="fs-dot-current"></button>
+          <button disabled></button>
+          <button disabled></button>
+          <button disabled></button>
+          <button disabled></button>
+          <button disabled></button>
+        </nav>
         <span class="fs-numbers fs-show">
           <transition-group name="slide-fade" mode="out-in">
             <span class="fs-number-current" v-if="show" key="current">{{ number }}</span>
