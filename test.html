@@ -5,22 +5,26 @@
     <title></title>
     <!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
     <link rel="stylesheet" href="test.css" type="text/css">
+    <script src="https://unpkg.com/vue"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="vue-app">
       <div class="fs-form-wrap" id="fs-form-wrap">
         <div class="fs-title">
           <h1>Create the group</h1>
         </div>
         <form id="myform" class="fs-form fs-form-full" autocomplete="off"></form>
-        <button class="fs-continue fs-show">
+        <button class="fs-continue fs-show" v-on:click="add(1)">
           Continue
         </button>
         <span class="fs-numbers fs-show">
-          <span class="fs-number-current">1</span>
+          <span class="fs-number-current">{{ number }}</span>
           <span class="fs-number-total">6</span>
         </span>
       </div>
     </div>
+    <script type="text/javascript" src="test.js">
+
+    </script>
   </body>
 </html>
