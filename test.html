@@ -18,7 +18,10 @@
           Continue
         </button>
         <span class="fs-numbers fs-show">
-          <span class="fs-number-current">{{ number }}</span>
+          <transition-group name="slide-fade" mode="out-in">
+            <span class="fs-number-current" v-if="show" key="current">{{ number }}</span>
+            <span class="fs-number-next" v-if="!show" key="nextnum">{{ nextNumber }}</span>
+          </transition-group>
           <span class="fs-number-total">6</span>
         </span>
       </div>
