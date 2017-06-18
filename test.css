@@ -71,9 +71,13 @@ body {
 	text-align: center;
 }
 
-.fs-numbers .fs-number-current{
+.fs-numbers .fs-number-current, .fs-numbers .fs-number-next{
 	float: left;
+	position: absolute;
+	left: 0;
 }
+
+
 /* Number indicator end */
 
 /*continue button*/
