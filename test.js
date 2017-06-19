@@ -3,7 +3,11 @@ new Vue({
   data: {
     number: 1,
     nextNumber: 0,
-    show: true
+    show: true,
+    numbers: [1,2,3,4,5,6],
+    fsdotcurrent: {
+      background: '#fffed8'
+    }
   },
   methods:{
     add:function(inc){
@@ -13,7 +17,7 @@ new Vue({
       // console.log(this.show);
     },
     showToggle(){
-      console.log('hi there');
+      return this.number;
     }
   }
 });

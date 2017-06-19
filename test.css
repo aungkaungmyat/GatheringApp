@@ -231,12 +231,12 @@ button.fs-continue::before {
 	transform: perspective(1000px) rotate3d(0,1,0,180deg);
 }
 
-.fs-nav-dots button.fs-dot-current{
+.fs-nav-dots button.fsdotcurrent{
 	-webkit-transform: perspective(1000px) rotate3d(0,1,0,180deg);
 	transform: perspective(1000px) rotate3d(0,1,0,180deg);
 }
 
 .fs-nav-dots button:hover::before,
-.fs-nav-dots button.fs-dot-current::before{
+.fs-nav-dots button.fsdotcurrent::before{
 	background: #fffed8;
 }
