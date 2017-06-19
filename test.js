@@ -4,13 +4,16 @@ new Vue({
     number: 1,
     nextNumber: 0,
     show: true,
-    numbers: [1,2,3,4,5,6],
-    fsdotcurrent: {
-      background: '#fffed8'
-    }
+    numbers: [{num: 1, disabled: true},
+              {num: 2, disabled: true},
+              {num: 3, disabled: true},
+              {num: 4, disabled: true},
+              {num: 5, disabled: true},
+              {num: 6, disabled: true}],
   },
   methods:{
     add:function(inc){
+      this.numbers[this.number-1].disabled = false;
       this.number += inc;
       this.nextNumber = this.number;
       this.show = !this.show;

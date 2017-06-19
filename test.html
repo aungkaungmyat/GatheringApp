@@ -27,7 +27,7 @@
         </nav> -->
         <nav class="fs-nav-dots fs-show">
           <button v-for="num in numbers"
-          v-bind:class="{ fsdotcurrent: num == number}">
+          v-bind:class="[{ fsdotcurrent: num.num == number},{disabled: num.disabled}]"></button>
         </nav>
         <span class="fs-numbers fs-show">
           <transition-group name="slide-fade" mode="out-in">
