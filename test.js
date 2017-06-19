@@ -11,6 +11,9 @@ new Vue({
       this.nextNumber = this.number;
       this.show = !this.show;
       // console.log(this.show);
+    },
+    showToggle(){
+      console.log('hi there');
     }
   }
 });
