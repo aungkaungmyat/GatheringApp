@@ -21,6 +21,10 @@ new Vue({
     },
     showToggle(){
       return this.number;
+    },
+    changeNumber(event){
+      this.nextNumber = event.target.id;
+      // this.nextNumber =  this.number-1;
     }
   }
 });
