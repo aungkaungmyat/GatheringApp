@@ -73,6 +73,77 @@ button.fs-continue {
 .no-js .fs-form-full .fs-fields > li{
 	visibility: visible;
 }
+
+/* Fields */
+.fs-fields{
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	top: 0;
+	list-style: none;
+}
+
+.fs-fields > li{
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.fs-fields  > li:hover{
+	z-index: 999;
+}
+
+.no-js .fs-form .fs-fields > li{
+	margin: 1em 0 2em;
+	padding: 0 0 2em 0;
+	border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+/*label*/
+.fs-fields > li label {
+	position: relative;
+}
+
+.fs-fields > li label.fs-field-label{
+	display: inline-block;
+	padding: 0 5px 1em 0;
+	font-weight: 700;
+	pointer-events: none;
+}
+
+/*input*/
+.fs-fields input {
+	display: block;
+	margin: 0;
+	padding: 0 0 0.15em;
+	width: 100%;
+	border: none;
+	border-bottom: 2px solid rgba(0,0,0,0.2);
+	background-color: transparent;
+	color: #fffed8;
+	text-overflow: ellipsis;
+	font-weight: bold;
+	font-size: 1.5em;
+	border-radius: 0;
+}
+
+.fs-fields input:invalid{
+	box-shadow: none;
+}
+
+.fs-fields [required]{
+	background-image: url(assets/img/abacusstar.svg);
+	background-position: top right;
+	background-size: 18px;
+	background-repeat: no-repeat;
+}
+
+.fs-fields input:focus{
+	background-color: #3b3f45;
+}
+
 /* Number indicator */
 .fs-numbers{
 	position: absolute;
