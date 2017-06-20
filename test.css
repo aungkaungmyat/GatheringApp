@@ -193,12 +193,12 @@ button.fs-continue::before {
   transition: all .15s ease;
 }
 .slideup-fade-leave-to {
-  transform: translateX(50%);
+  transform: translateY(50%);
   opacity: 0;
 }
 
 .slideup-fade-enter {
-  transform: translateX(-50%);
+  transform: translateY(-50%);
 }
 /*end of number animation*/
 

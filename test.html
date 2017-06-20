@@ -30,13 +30,13 @@
           v-bind:class="[{ fsdotcurrent: num.num == number},{disabled: num.disabled}]" v-bind:id="num.num" v-on:click="changeNumber"></button>
         </nav>
         <span class="fs-numbers fs-show">
-          <template v-if='nextNumber == number || nextNumber == number-1'>
+          <template v-if='numDifference >= 0'>
             <transition-group name="slidedown-fade" mode="out-in">
               <span class="fs-number-current" v-if="show" key="current">{{ number }}</span>
               <span class="fs-number-next" v-if="!show" key="nextnum">{{ nextNumber }}</span>
             </transition-group>
           </template>
-          <template v-else>
+          <template v-else-if='numDifference < 0'>
             <transition-group name="slideup-fade" mode="out-in">
               <span class="fs-number-current" v-if="show" key="current">{{ number }}</span>
               <span class="fs-number-next" v-if="!show" key="nextnum">{{ nextNumber }}</span>
