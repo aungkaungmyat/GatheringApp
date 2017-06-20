@@ -25,6 +25,7 @@ new Vue({
     changeNumber(event){
       this.nextNumber = event.target.id;
       this.number = this.nextNumber-1+1;
+      this.show = !this.show;
       // this.nextNumber =  this.number-1;
     }
   }
