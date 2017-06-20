@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -13,18 +13,22 @@
         <div class="fs-title">
           <h1>Create the group</h1>
         </div>
-        <form id="myform" class="fs-form fs-form-full" autocomplete="off"></form>
+
+
+        <form id="myform" class="fs-form fs-form-full" autocomplete="off">
+          <ol class="fs-fields">
+            <li>
+              <label class="fs-field]-label fs-anim-upper" for="q1">What's your name?</label>
+              <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" required/>
+            </li>
+          </ol>
+        </form>
+
+        <!-- fs control -->
+        <div class="fs-controls">
         <button class="fs-continue fs-show" v-on:click="add(1);">
           Continue
         </button>
-        <!-- <nav class="fs-nav-dots fs-show" v-bind:style="button:nth-child(showToggle()){background: red;}">
-          <button class="fs-dot-current"></button>
-          <button disabled></button>
-          <button disabled></button>
-          <button disabled></button>
-          <button disabled></button>
-          <button disabled></button>
-        </nav> -->
         <nav class="fs-nav-dots fs-show">
           <button v-for="num in numbers"
           v-bind:class="[{ fsdotcurrent: num.num == number},{disabled: num.disabled}]" v-bind:id="num.num" v-on:click="changeNumber"></button>
@@ -42,12 +46,11 @@
               <span class="fs-number-next" v-if="!show" key="nextnum">{{ nextNumber }}</span>
             </transition-group>
           </template>
-          <!-- <transition-group name="slide-fade" mode="out-in">
-            <span class="fs-number-current" v-if="show" key="current">{{ number }}</span>
-            <span class="fs-number-next" v-if="!show" key="nextnum">{{ nextNumber }}</span>
-          </transition-group> -->
           <span class="fs-number-total">6</span>
         </span>
+        </div>
+        <!-- fs control -->
+
       </div>
     </div>
     <script type="text/javascript" src="test.js">

@@ -40,6 +40,39 @@ body {
 	margin: 0;
 }
 
+/*Form*/
+.fs-form{
+	position: relative;
+	text-align: left;
+	font-size: 2.5em;
+}
+
+.no-js .fs-form{
+	padding: 0 0 6em 0;
+}
+
+/*for full form*/
+.fs-form-full{
+	top: 32%;
+	margin: 0 auto;
+	width: 70%;
+}
+
+.fs-form-full,
+.fs-message-error{
+	max-width: 960px;
+}
+
+.fs-form-full .fs-fields > li,
+.fs-numbers,
+.fs-nav-dots,
+button.fs-continue {
+	visibility: hidden;
+}
+
+.no-js .fs-form-full .fs-fields > li{
+	visibility: visible;
+}
 /* Number indicator */
 .fs-numbers{
 	position: absolute;
@@ -81,10 +114,6 @@ body {
 /* Number indicator end */
 
 /*continue button*/
-.fs-nav-dots,
-button.fs-continue{
-	visibility: hidden;
-}
 
 .fs-show{
 	visibility: visible !important;
@@ -100,6 +129,7 @@ button.fs-continue{
 	pointer-events: none;
 }
 
+.fs-form-wrap input:focus,
 .fs-form-wrap button:focus{
 	outline: none;
 }
@@ -266,4 +296,10 @@ button.fs-continue::before {
 .fs-nav-dots button:hover::before,
 .fs-nav-dots button.fsdotcurrent::before{
 	background: #fffed8;
+}
+/*end of nav dots*/
+
+/*for form wrap*/
+.fs-form-wrap{
+	font-size: 70%;
 }
