@@ -98,7 +98,7 @@ button.fs-continue {
 .no-js .fs-form .fs-fields > li{
 	margin: 1em 0 2em;
 	padding: 0 0 2em 0;
-	border-bottom: 2px solid rgba(0,0,0,0.1);
+	/*border-bottom: 2px solid rgba(0,0,0,0.1);*/
 }
 
 /*label*/
@@ -127,6 +127,7 @@ button.fs-continue {
 	font-weight: bold;
 	font-size: 1.5em;
 	border-radius: 0;
+	font-family: 'Raleway', Arial, sans-serif;
 }
 
 .fs-fields input:invalid{
