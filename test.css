@@ -13,10 +13,10 @@ body {
 	background: #3b3f45;
 	color: #fff;
 	font-weight: 400;
-	font-size: 1em;
+	font-size: 1.4em;
 	font-family: 'Raleway', Arial, sans-serif;
 	overflow: hidden;
-	overflow-y: scroll;
+	/*overflow-y: scroll;*/
 	min-height: 590px;
 }
 
