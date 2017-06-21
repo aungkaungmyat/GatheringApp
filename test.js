@@ -10,7 +10,13 @@ new Vue({
               {num: 4, disabled: true},
               {num: 5, disabled: true},
               {num: 6, disabled: true}],
-    numDifference: 0
+    numDifference: 0,
+    questions: [{q1:false},
+                {q2:true},
+                {q3:false},
+                {q4:false},
+                {q5:false},
+                {q6:false}]
   },
   methods:{
     add:function(inc){
