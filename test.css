@@ -63,7 +63,7 @@ body {
 	max-width: 960px;
 }
 
-/*.fs-form-full .fs-fields > li,*/
+.fs-form-full .fs-fields > li,
 .fs-numbers,
 .fs-nav-dots,
 button.fs-continue {
@@ -116,6 +116,7 @@ button.fs-continue {
 	padding: 0 5px 1em 0;
 	font-weight: 700;
 	pointer-events: none;
+	background: red;
 }
 
 /*input*/
@@ -171,28 +172,8 @@ button.fs-continue {
 	visibility: visible;
 }*/
 
-/*question animtions*/
-/*.fs-form .fsHide{
-	visibility: visible;
-}*/
 
-/*.slideup-fade-enter-active {
-  transition: all .2s ease;
-}
-.slideup-fade-leave-active {
-  transition: all .15s ease;
-}
-.slideup-fade-leave-to {
-  transform: translateY(50%);
-  opacity: 0;
-}
-
-.slideup-fade-enter {
-  transform: translateY(-50%);
-}*/
-
-
-.fs-form .fsdisplaynext .fsHide .fs-anim-lower,
+/*.fs-form .fsdisplaynext .fsHide .fs-anim-lower,
 .fs-form .fsdisplaynext .fsHide .fs-anim-upper {
 	background: red;
 	-webkit-animation: animHideNext 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
@@ -210,9 +191,52 @@ button.fs-continue {
 
 @keyframes animHideNext {
 	to { opacity: 0; -webkit-transform: translate3d(0,-500px,0); transform: translate3d(0,-500px,0); }
+}*/
+
+.fs-hide-leave-active{
+	/*transition: all .5s ease;*/
+
 }
 
-.fs-form .fsdisplaynext .fstest .fs-anim-lower,
+.fs-hide-leave-to{
+	/*transform: translateY(-100%);*/
+	-webkit-animation: animHideNext 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
+	animation: animHideNext 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
+}
+
+@-webkit-keyframes animHideNext {
+	to { opacity: 0; -webkit-transform: translate3d(0,-500px,0); }
+}
+
+@keyframes animHideNext {
+	to { opacity: 0; -webkit-transform: translate3d(0,-500px,0); transform: translate3d(0,-500px,0); }
+}
+
+
+
+.fs-hide-enter-active{
+	transition: all .5s ease;
+}
+
+.fs-hide-enter{
+	transform: translateY(300%);
+	/*-webkit-animation: animShowNext 0.5s cubic-bezier(0.7,0,0.3,1) both 0.15s;
+	animation: animShowNext 0.5s cubic-bezier(0.7,0,0.3,1) both 0.15s;*/
+}
+
+/*.fs-hide-enter .fs-anim-lower{
+	-webkit-animation-delay: 0.25s;
+	animation-delay: 0.25s;
+}*/
+
+/*@-webkit-keyframes animShowNext {
+	from { opacity: 0; -webkit-transform: translate3d(0,-500px,0); }
+}
+
+@keyframes animShowNext {
+	from { opacity: 0; -webkit-transform: translate3d(0,-500px,0); transform: translate3d(0,-500px,0); }
+}*/
+/*.fs-form .fsdisplaynext .fstest .fs-anim-lower,
 .fs-form .fsdisplaynext .fstest .fs-anim-upper {
 	-webkit-animation: animShowNext 0.5s cubic-bezier(0.7,0,0.3,1) both 0.15s;
 	animation: animShowNext 0.5s cubic-bezier(0.7,0,0.3,1) both 0.15s;
@@ -221,15 +245,9 @@ button.fs-continue {
 .fs-form .fsdisplaynext .fstest .fs-anim-lower {
 	-webkit-animation-delay: 0.25s;
 	animation-delay: 0.25s;
-}
+}*/
 
-@-webkit-keyframes animShowNext {
-	from { opacity: 0; -webkit-transform: translate3d(0,500px,0); }
-}
 
-@keyframes animShowNext {
-	from { opacity: 0; -webkit-transform: translate3d(0,500px,0); transform: translate3d(0,500px,0); }
-}
 
 /* Number indicator */
 .fs-numbers{
@@ -339,7 +357,6 @@ button.fs-continue:hover{
 	border-radius: 50%;
 	font-size: 2em;
 }
-
 button.fs-continue::before {
 	position: absolute;
 	top: 0;
