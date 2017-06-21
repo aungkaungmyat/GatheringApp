@@ -37,7 +37,7 @@ new Vue({
                 false,
                 false
               ],
-    fsHide: false
+    fstest: false
   },
   methods: {
     add: function(inc) {
@@ -74,8 +74,8 @@ new Vue({
 
         }
       }
-      this.fsHide = true;
-      
+      this.fstest = true;
+
     },
     showToggle() {
       return this.number;

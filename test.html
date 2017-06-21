@@ -16,15 +16,28 @@
 
 
         <form id="myform" class="fs-form fs-form-full" autocomplete="off">
-          <ol class="fs-fields" v-bind:class="{fsdisplaynext : fsHide}">
-            <!-- <transition name=""></transition> -->
-            <li v-show="questions[0]"  v-bind:class="{fsHide : fsHide}">
+          <ol class="fs-fields" v-bind:class="{fsdisplaynext : fstest}">
+            <!-- <transition-group name="fs-hide" mode="out-in">
+              <li v-if="questions[0]"  key="firstq">
+                <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
+                <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" required/>
+              </li>
+              <li v-if="questions[1]" v-bind:class="{fstest : fsHide}" key="secondq">
+                <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">What's your email address</label>
+                <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="akm@gmail.com" required/>
+              </li>
+            </transition-group> -->
+            <li  v-bind:class="{fsHide: fstest}">
               <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
               <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" required/>
             </li>
-            <li v-show="questions[1]" v-bind:class="{fstest : fsHide}">
+            <li v-show="questions[1]" v-bind:class="{fstest : fstest}">
               <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">What's your email address</label>
               <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="akm@gmail.com" required/>
+            </li>
+            <li v-show="questions[2]" v-bind:class="{fstest : fstest}">
+              <label class="fs-field-label fs-anim-upper" for="q3">What's do you  want</label>
+              <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="games" required/>
             </li>
           </ol>
         </form>

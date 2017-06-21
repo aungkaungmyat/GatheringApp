@@ -176,15 +176,30 @@ button.fs-continue {
 	visibility: visible;
 }*/
 
+/*.slideup-fade-enter-active {
+  transition: all .2s ease;
+}
+.slideup-fade-leave-active {
+  transition: all .15s ease;
+}
+.slideup-fade-leave-to {
+  transform: translateY(50%);
+  opacity: 0;
+}
+
+.slideup-fade-enter {
+  transform: translateY(-50%);
+}*/
+
+
 .fs-form .fsdisplaynext .fsHide .fs-anim-lower,
 .fs-form .fsdisplaynext .fsHide .fs-anim-upper {
 	background: red;
 	-webkit-animation: animHideNext 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
 	animation: animHideNext 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
-
 }
 
-.fs-form .fsdisplaynext .fs-hide .fs-anim-lower {
+.fs-form .fsdisplaynext .fsHide .fs-anim-lower {
 	-webkit-animation-delay: 0.1s;
 	animation-delay: 0.1s;
 }
