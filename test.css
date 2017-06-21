@@ -203,7 +203,7 @@ button.fs-continue {
 
 
 .fs-hide-enter-active{
-	transition: all .5s ease;
+	transition: all .75s ease;
 }
 
 .fs-hide-enter{
@@ -228,26 +228,26 @@ button.fs-continue {
 }
 
 @keyframes animHidePrev {
-	to { opacity: 0; -webkit-transform: translate3d(0,500px,0); transform: translate3d(0,-500px,0); }
+	to { opacity: 0; -webkit-transform: translate3d(0,500px,0); transform: translate3d(0,500px,0); }
 }
 
 .fs-hide-reverse-enter-active{
-	/*transition: all .5s ease;*/
+	transition: all .75s ease;
 
 }
 
 .fs-hide-reverse-enter{
-	/*transform: translateY(-100%);*/
-	-webkit-animation: animShowPrev 0.5s cubic-bezier(0.7,0,0.3,1) both  0.15s;
-	animation: animShowPrev 0.5s cubic-bezier(0.7,0,0.3,1) both  0.15s;
+	transform: translateY(-300%);
+	/*-webkit-animation: animShowPrev 0.5s cubic-bezier(0.7,0,0.3,1) both  0.15s;
+	animation: animShowPrev 0.5s cubic-bezier(0.7,0,0.3,1) both  0.15s;*/
 }
 
 @-webkit-keyframes animShowPrev {
-	to { opacity: 0; -webkit-transform: translate3d(0,-500px,0); }
+	from { opacity: 0; -webkit-transform: translate3d(0,-500px,0); }
 }
 
 @keyframes animShowPrev {
-	to { opacity: 0; -webkit-transform: translate3d(0,-500px,0); transform: translate3d(0,-500px,0); }
+	from { opacity: 0; -webkit-transform: translate3d(0,-500px,0); transform: translate3d(0,-500px,0); }
 }
 
 /*.fs-hide-enter .fs-anim-lower{
