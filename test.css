@@ -151,7 +151,10 @@ button.fs-continue {
 }
 
 /* placeholder */
-.fs-fields input::-webkit-input-placeholder{
+.fs-fields input::-webkit-input-placeholder,
+.fs-fields input::-moz-input-placeholder,
+.fs-fields input::-moz-placeholder,
+.fs-fields input:-ms-input-placeholder{
 	color: rgba(0,0,0,0.1);
 }
 
