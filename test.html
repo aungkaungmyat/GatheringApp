@@ -17,7 +17,7 @@
 
         <form id="myform" class="fs-form fs-form-full" autocomplete="off">
           <ol class="fs-fields" v-bind:class="{fsdisplaynext : fstest}">
-            <transition-group name="fs-hide" mode="out-in" id="fs-hide">
+            <transition-group name="fs-hide" mode="out-in">
               <li v-show="questions[0]"  key="firstq">
                 <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
                 <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" required/>

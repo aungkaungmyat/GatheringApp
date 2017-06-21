@@ -111,12 +111,21 @@ button.fs-continue {
 	position: relative;
 }
 
-.fs-fields > li label.fs-field-label{
+/*.fs-fields > li label.fs-field-label{
 	display: inline-block;
 	padding: 0 5px 1em 0;
 	font-weight: 700;
 	pointer-events: none;
 	background: red;
+}*/
+
+/*fix the wrong styling issue by removing >*/
+.fs-fields  li label.fs-field-label{
+	display: inline-block;
+	padding: 0 5px 1em 0;
+	font-weight: 700;
+	pointer-events: none;
+	/*background: red;*/
 }
 
 /*input*/
