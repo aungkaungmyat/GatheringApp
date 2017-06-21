@@ -36,7 +36,8 @@ new Vue({
                 false,
                 false,
                 false
-              ]
+              ],
+    fsHide: false
   },
   methods: {
     add: function(inc) {
@@ -73,6 +74,8 @@ new Vue({
 
         }
       }
+      this.fsHide = true;
+      
     },
     showToggle() {
       return this.number;
@@ -110,7 +113,7 @@ new Vue({
 
         }
       }
-      // this.nextNumber =  this.number-1;
+
     }
   }
 });
