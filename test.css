@@ -82,6 +82,39 @@ body {
 	font-size: 1.85em;
 }
 
+.fsformoverview .fs-fields{
+	width: 40%;
+	top: 100px;
+}
+
+/*.fs-form .fsformoverview{
+	-webkit-animation: animFadeIn 0.5s;
+	animation: animFadeIn 0.5s;
+}
+
+@-webkit-keyframes animFadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes animFadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}*/
+
+/*.fs-form .fsformoverview .fs-fields {
+	-webkit-animation: animMove 0.5s;
+	animation: animMove 0.5s;
+}
+
+@-webkit-keyframes animMove {
+	from { top: 100px; }
+}
+
+@keyframes animMove {
+	from { top: 100px; }
+}*/
+
 .fsformoverview ol{
 	max-width: ;
 }
