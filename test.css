@@ -65,12 +65,14 @@ body {
 
 /*for formoverview*/
 .fsformoverview{
+	position: absolute;
 	padding: 2.5em 30% 6em;
 	width: 100%;
 	height: 100%;
 	background: #fffed8;
 	color: #3b3f45;
 	font-size: 1.2em;
+	overflow-y: scroll;
 }
 
 .fsformoverview .fs-fields::before{
@@ -85,6 +87,7 @@ body {
 .fsformoverview .fs-fields{
 	width: 40%;
 	top: 100px;
+	/*overflow: */
 }
 
 /*.fs-form .fsformoverview{
@@ -472,6 +475,14 @@ button.fs-continue{
 	border-radius: 40px;
 	font-weight: 700;
 	color: rgba(0,0,0,0.4);
+}
+
+button.fs-submit{
+	position: relative;
+	right: 0;
+	bottom: 0;
+	margin: 100px 40px 60px 0;
+	font-size: 1.25em;
 }
 
 button.fs-continue{

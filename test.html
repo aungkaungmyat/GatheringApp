@@ -35,6 +35,14 @@
                 <label class="fs-field-label fs-anim-upper" for="q4">Where do you want to go</label>
                 <input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="TTN"/>
               </li>
+              <li v-show="questions[4]"  key="fifthq">
+                <label class="fs-field-label fs-anim-upper" for="q5">What do you wanna eat</label>
+                <input class="fs-anim-lower" id="q5" name="q5" type="text" placeholder="ramen"/>
+              </li>
+              <!-- <li v-show="questions[5]"  key="sixthq">
+                <label class="fs-field-label fs-anim-upper" for="q6">Who do you love</label>
+                <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei"/>
+              </li> -->
             </transition-group>
             </template>
             <template v-if="numDifference < 0">
@@ -54,6 +62,14 @@
               <li v-show="questions[3]"  key="forthq">
                 <label class="fs-field-label fs-anim-upper" for="q4">Where do you want to go</label>
                 <input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="TTN"/>
+              </li>
+              <li v-show="questions[4]"  key="fifthq">
+                <label class="fs-field-label fs-anim-upper" for="q5">What do you wanna eat</label>
+                <input class="fs-anim-lower" id="q5" name="q5" type="text" placeholder="ramen"/>
+              </li>
+              <li v-show="questions[5]"  key="sixthq">
+                <label class="fs-field-label fs-anim-upper" for="q6">Who do you love</label>
+                <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei"/>
               </li>
             </transition-group>
             </template>
