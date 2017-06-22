@@ -48,9 +48,11 @@ new Vue({
       this.number += inc;
       this.nextNumber = this.number;
       this.show = !this.show;
-      if(this.number === 4){
+      if(this.number === 5){
+
         this.overview = true;
         this.formfull = false;
+
       }
       // console.log(this.show);
       for (var i = 0; i < 6; i++) {
@@ -78,6 +80,11 @@ new Vue({
             break;
           default:
 
+        }
+      }
+      if(this.number === 5){
+        for(var k = 0 ; k < 6 ; k++){
+          this.questions[k] = true;
         }
       }
       this.fstest = true;
