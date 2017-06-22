@@ -87,14 +87,14 @@
 
         <!-- fs control -->
         <div class="fs-controls">
-        <button class="fs-continue fs-show" v-on:click="add(1);">
+        <button class="fs-continue" v-bind:class="{fsShow: formfull}" v-on:click="add(1);">
           Continue
         </button>
-        <nav class="fs-nav-dots fs-show">
+        <nav class="fs-nav-dots" v-bind:class="{fsShow: formfull}">
           <button v-for="num in numbers"
           v-bind:class="[{ fsdotcurrent: num.num == number},{disabled: num.disabled}]" v-bind:id="num.num" v-on:click="changeNumber"></button>
         </nav>
-        <span class="fs-numbers fs-show">
+        <span class="fs-numbers" v-bind:class="{fsShow: formfull}">
           <template v-if='numDifference >= 0'>
             <transition-group name="slidedown-fade" mode="out-in">
               <span class="fs-number-current" v-if="show" key="current">{{ number }}</span>
