@@ -15,7 +15,7 @@
         </div>
 
 
-        <form id="myform" class="fs-form fs-form-full" v-bind:class="{fsformoverview : overview}" autocomplete="off">
+        <form id="myform" class="fs-form" v-bind:class="[{fsformfull : formfull},{fsformoverview : overview}]" autocomplete="off">
           <ol class="fs-fields" v-bind:class="{fsdisplaynext : fstest}">
             <template v-if="numDifference >= 0">
             <transition-group name="fs-hide" mode="out-in">

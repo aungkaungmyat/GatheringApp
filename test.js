@@ -38,7 +38,8 @@ new Vue({
                 false
               ],
     fstest: false,
-    overview: false
+    overview: false,
+    formfull: true
   },
   methods: {
     add: function(inc) {
@@ -49,6 +50,7 @@ new Vue({
       this.show = !this.show;
       if(this.number === 4){
         this.overview = true;
+        this.formfull = false;
       }
       // console.log(this.show);
       for (var i = 0; i < 6; i++) {

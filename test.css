@@ -52,13 +52,13 @@ body {
 }
 
 /*for full form*/
-.fs-form-full{
+.fsformfull{
 	top: 32%;
 	margin: 0 auto;
 	width: 70%;
 }
 
-.fs-form-full,
+.fsformfull,
 .fs-message-error{
 	max-width: 960px;
 }
@@ -72,14 +72,14 @@ body {
 	font-size: 1.2em;
 }
 
-.fs-form-full .fs-fields > li,
+.fsformfull .fs-fields > li,
 .fs-numbers,
 .fs-nav-dots,
 button.fs-continue {
 	visibility: hidden;
 }
 
-.no-js .fs-form-full .fs-fields > li{
+.no-js .fsformfull .fs-fields > li{
 	visibility: visible;
 }
 
@@ -104,7 +104,7 @@ button.fs-continue {
 	z-index: 999;
 }
 
-.js .fs-form-full .fs-fields > li{
+.js .fsformfull .fs-fields > li{
 	position: absolute;
 	width: 100%;
 }
@@ -136,7 +136,7 @@ button.fs-continue {
 	pointer-events: none;
 }
 
-.fs-form-full .fs-fields li label[data-info]::after{
+.fsformfull .fs-fields li label[data-info]::after{
 	position: relative;
 	display: inline-block;
 	margin-left: 10px;
@@ -157,7 +157,7 @@ button.fs-continue {
 	pointer-events: auto;
 }
 
-.fs-form-full .fs-fields li label[data-info]::before{
+.fsformfull .fs-fields li label[data-info]::before{
 	position: absolute;
 	bottom: 100%;
 	left: 0;
@@ -174,14 +174,14 @@ button.fs-continue {
 	pointer-events: none;
 }
 
-.fs-form-full .fs-fields li label[data-info]:hover::before{
+.fsformfull .fs-fields li label[data-info]:hover::before{
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-.fs-form-full .fs-fields li label:hover ~ .fs-info,
-.fs-form-full .fs-fields li .fs-info:hover {
+.fsformfull .fs-fields li label:hover ~ .fs-info,
+.fsformfull .fs-fields li .fs-info:hover {
 	opacity: 1;
 	-webkit-transform: translateY(0);
 	transform: translateY(0);
