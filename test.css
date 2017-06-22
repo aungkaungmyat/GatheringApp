@@ -63,6 +63,15 @@ body {
 	max-width: 960px;
 }
 
+.fsformoverview{
+	padding: 2.5em 30% 6em;
+	width: 100%;
+	height: 100%;
+	background: #fffed8;
+	color: #3b3f45;
+	font-size: 1.2em;
+}
+
 .fs-form-full .fs-fields > li,
 .fs-numbers,
 .fs-nav-dots,

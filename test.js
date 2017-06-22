@@ -37,7 +37,8 @@ new Vue({
                 false,
                 false
               ],
-    fstest: false
+    fstest: false,
+    overview: false
   },
   methods: {
     add: function(inc) {
@@ -46,6 +47,9 @@ new Vue({
       this.number += inc;
       this.nextNumber = this.number;
       this.show = !this.show;
+      if(this.number === 4){
+        this.overview = true;
+      }
       // console.log(this.show);
       for (var i = 0; i < 6; i++) {
         for (var j = 0; j < 6; j++) {
