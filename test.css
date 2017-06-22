@@ -63,6 +63,7 @@ body {
 	max-width: 960px;
 }
 
+/*for formoverview*/
 .fsformoverview{
 	padding: 2.5em 30% 6em;
 	width: 100%;
@@ -70,6 +71,66 @@ body {
 	background: #fffed8;
 	color: #3b3f45;
 	font-size: 1.2em;
+}
+
+.fsformoverview .fs-fields::before{
+	display: block;
+	margin-bottom: 2.5em;
+	color: #3b3f45;
+	content: 'Review & Submit';
+	font-weight: 700;
+	font-size: 1.85em;
+}
+
+.fsformoverview ol{
+	max-width: ;
+}
+
+.fsformoverview .fs-fields  li{
+	margin: 1em 0 2em;
+	padding: 0 0 2em 0;
+	border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.fsformoverview .fs-fields input{
+	border-bottom-color: transparent;
+	color: rgba(0,0,0,0.5);
+}
+
+.fsformoverview .fs-fields input:focus{
+	background-color: #fffed8;
+}
+
+.fsformoverview .fs-fields input {
+	font-size: 1.2em;
+}
+
+.fsform .fsformoverview{
+	top: 0;
+	right: 0;
+	padding: 1.5em 1em 8em 1em;
+	font-size: 1.5em;
+}
+/*end of overview*/
+
+/*for submit button*/
+.fs-form .fs-submit{
+	display: none;
+}
+
+.fsformoverview .fs-submit{
+	display: block;
+	float: right;
+}
+
+.fsformoverview .fs-submit{
+	border-color: #232529;
+	color: #232529;
+}
+
+.button.fs-submit{
+	width: 100%;
+	font-size: 1.25em;
 }
 
 .fsformfull .fs-fields > li,
@@ -371,6 +432,7 @@ button.fs-continue {
 	outline: none;
 }
 
+button.fs-submit,
 button.fs-continue{
 	padding: 0.6em 1.5em;
 	border: 3px solid #232529;
@@ -387,6 +449,8 @@ button.fs-continue{
 	font-size: 1.25em;
 }
 
+button.fs-submit:hover,
+button.fs-submit:focus,
 button.fs-continue:hover{
 	background: #232529;
 	color: #fff;
