@@ -125,7 +125,58 @@ button.fs-continue {
 	padding: 0 5px 1em 0;
 	font-weight: 700;
 	pointer-events: none;
-	/*background: red;*/
+}
+
+.fs-form-full .fs-fields li label[data-info]::after{
+	position: relative;
+	display: inline-block;
+	margin-left: 10px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid rgba(0,0,0,0.4);
+	color: rgba(0,0,0,0.4);
+	border-radius: 50%;
+	content: 'i';
+	vertical-align: top;
+	text-align: center;
+	font-weight: 700;
+	font-style: italic;
+	font-size: 14px;
+	font-family: Georgia, serif;
+	line-height: 20px;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+.fs-form-full .fs-fields li label[data-info]::before{
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	padding: 0 0 10px;
+	min-width: 200px;
+	content: attr(data-info);
+	font-size: 0.4em;
+	color: #6a7b7e;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translate3d(0,-5px,0);
+	transform: translate3d(0,-5px,0);
+	pointer-events: none;
+}
+
+.fs-form-full .fs-fields li label[data-info]:hover::before{
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.fs-form-full .fs-fields li label:hover ~ .fs-info,
+.fs-form-full .fs-fields li .fs-info:hover {
+	opacity: 1;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+	pointer-events: auto;
 }
 
 /*input*/
@@ -249,31 +300,6 @@ button.fs-continue {
 @keyframes animShowPrev {
 	from { opacity: 0; -webkit-transform: translate3d(0,-500px,0); transform: translate3d(0,-500px,0); }
 }
-
-/*.fs-hide-enter .fs-anim-lower{
-	-webkit-animation-delay: 0.25s;
-	animation-delay: 0.25s;
-}*/
-
-/*@-webkit-keyframes animShowNext {
-	from { opacity: 0; -webkit-transform: translate3d(0,-500px,0); }
-}
-
-@keyframes animShowNext {
-	from { opacity: 0; -webkit-transform: translate3d(0,-500px,0); transform: translate3d(0,-500px,0); }
-}*/
-/*.fs-form .fsdisplaynext .fstest .fs-anim-lower,
-.fs-form .fsdisplaynext .fstest .fs-anim-upper {
-	-webkit-animation: animShowNext 0.5s cubic-bezier(0.7,0,0.3,1) both 0.15s;
-	animation: animShowNext 0.5s cubic-bezier(0.7,0,0.3,1) both 0.15s;
-}
-
-.fs-form .fsdisplaynext .fstest .fs-anim-lower {
-	-webkit-animation-delay: 0.25s;
-	animation-delay: 0.25s;
-}*/
-
-
 
 /* Number indicator */
 .fs-numbers{
