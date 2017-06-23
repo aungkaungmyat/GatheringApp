@@ -129,14 +129,4 @@ new Vue({
 
     }
   }
-  // mounted: function(){
-  //   alert('mounted');
-  // },
-  // beforeUpdate: function(){
-  //   alert('beforeUpdate');
-  // },
-  // updated: function(){
-  //   alert('updated');
-  //   this.fstest = false;
-  // }
 });

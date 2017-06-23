@@ -21,23 +21,27 @@
             <transition-group name="fs-hide" mode="out-in">
               <li v-show="questions[0]"  key="firstq">
                 <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
-                <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" required/>
+                <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" v-on:keyup.enter="add(1);" required/>
               </li>
               <li v-show="questions[1]"  key="secondq">
                 <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">What's your email address</label>
-                <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="akm@gmail.com" required/>
+                <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="akm@gmail.com" v-on:keyup.enter="add(1);" required/>
               </li>
               <li v-show="questions[2]"  key="thirdq">
                 <label class="fs-field-label fs-anim-upper" for="q3">What's do you  want</label>
-                <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="games" required/>
+                <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="games" v-on:keyup.enter="add(1);"required/>
               </li>
               <li v-show="questions[3]"  key="forthq">
                 <label class="fs-field-label fs-anim-upper" for="q4">Where do you want to go</label>
-                <input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="TTN"/>
+                <input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="TTN" v-on:keyup.enter="add(1);"/>
               </li>
               <li v-show="questions[4]"  key="fifthq">
                 <label class="fs-field-label fs-anim-upper" for="q5">What do you wanna eat</label>
-                <input class="fs-anim-lower" id="q5" name="q5" type="text" placeholder="ramen"/>
+                <input class="fs-anim-lower" id="q5" name="q5" type="text" placeholder="ramen" v-on:keyup.enter="add(1);"/>
+              </li>
+              <li v-show="questions[5]"  key="sixthq">
+                <label class="fs-field-label fs-anim-upper" for="q6">Who do you love</label>
+                <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei" v-on:keyup.enter="add(1);"/>
               </li>
               <!-- <li v-show="questions[5]"  key="sixthq">
                 <label class="fs-field-label fs-anim-upper" for="q6">Who do you love</label>
@@ -49,27 +53,27 @@
             <transition-group name="fs-hide-reverse" mode="out-in">
               <li v-show="questions[0]"  key="firstq">
                 <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
-                <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" required/>
+                <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" v-on:keyup.enter="add(1);" required/>
               </li>
               <li v-show="questions[1]"  key="secondq">
                 <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">What's your email address</label>
-                <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="akm@gmail.com" required/>
+                <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="akm@gmail.com" v-on:keyup.enter="add(1);" required/>
               </li>
               <li v-show="questions[2]"  key="thirdq">
                 <label class="fs-field-label fs-anim-upper" for="q3">What's do you  want</label>
-                <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="games" required/>
+                <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="games" v-on:keyup.enter="add(1);" required/>
               </li>
               <li v-show="questions[3]"  key="forthq">
                 <label class="fs-field-label fs-anim-upper" for="q4">Where do you want to go</label>
-                <input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="TTN"/>
+                <input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="TTN" v-on:keyup.enter="add(1);"/>
               </li>
               <li v-show="questions[4]"  key="fifthq">
                 <label class="fs-field-label fs-anim-upper" for="q5">What do you wanna eat</label>
-                <input class="fs-anim-lower" id="q5" name="q5" type="text" placeholder="ramen"/>
+                <input class="fs-anim-lower" id="q5" name="q5" type="text" placeholder="ramen" v-on:keyup.enter="add(1);"/>
               </li>
               <li v-show="questions[5]"  key="sixthq">
                 <label class="fs-field-label fs-anim-upper" for="q6">Who do you love</label>
-                <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei"/>
+                <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei" v-on:keyup.enter="add(1);"/>
               </li>
             </transition-group>
             </template>
