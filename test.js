@@ -1,3 +1,13 @@
+
+
+$(document).keypress(function(e) {
+  if(e.which == 13) {
+    // enter pressed
+
+  $( "#fscontinue" ).trigger( "click" );
+}
+});
+
 new Vue({
   el: '#vue-app',
   data: {

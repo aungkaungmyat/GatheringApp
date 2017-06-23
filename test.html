@@ -6,6 +6,7 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
     <link rel="stylesheet" href="test.css" type="text/css">
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="container" id="vue-app">
@@ -15,7 +16,7 @@
         </div>
 
 
-        <form id="myform" class="fs-form" v-bind:class="[{fsformfull : formfull},{fsformoverview : overview}]" autocomplete="off">
+        <form id="myform" class="fs-form" v-bind:class="[{fsformfull : formfull},{fsformoverview : overview}]" autocomplete="off" v-on:submit.prevent>
           <ol class="fs-fields" v-bind:class="{fsdisplaynext : fstest}">
             <template v-if="numDifference >= 0">
             <transition-group name="fs-hide" mode="out-in">
@@ -107,7 +108,7 @@
 
         <!-- fs control -->
         <div class="fs-controls">
-        <button class="fs-continue" v-bind:class="{fsShow: formfull}" v-on:click="add(1);">
+        <button type="button" class="fs-continue" id="fscontinue" v-bind:class="{fsShow: formfull}" v-on:click="add(1);">
           Continue
         </button>
         <nav class="fs-nav-dots" v-bind:class="{fsShow: formfull}">
