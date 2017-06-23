@@ -2,8 +2,6 @@
 
 $(document).keypress(function(e) {
   if(e.which == 13) {
-    // enter pressed
-
   $( "#fscontinue" ).trigger( "click" );
 }
 });
@@ -58,7 +56,7 @@ new Vue({
       this.number += inc;
       this.nextNumber = this.number;
       this.show = !this.show;
-      if(this.number === 5){
+      if(this.number === 7){
 
         this.overview = true;
         this.formfull = false;
@@ -92,7 +90,7 @@ new Vue({
 
         }
       }
-      if(this.number === 5){
+      if(this.number === 7){
         for(var k = 0 ; k < 6 ; k++){
           this.questions[k] = true;
         }
