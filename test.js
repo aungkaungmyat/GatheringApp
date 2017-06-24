@@ -9,7 +9,10 @@ Vue.component('date-picker',  {
   //   // }
   // });
   // flatpickr($(this.$el));
-  flatpickr(this.$el);
+  flatpickr(this.$el,{
+    enableTime: true
+  });
+  
   }
 
 });
