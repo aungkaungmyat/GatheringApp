@@ -1,5 +1,5 @@
 Vue.component('date-picker',  {
-  template: '<input/>',
+  template: '<input  class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat"  required/>',
   mounted: function() {
   // var self = this;
   // $(this.$el).datepicker({
@@ -12,7 +12,7 @@ Vue.component('date-picker',  {
   flatpickr(this.$el,{
     enableTime: true
   });
-  
+
   }
 
 });
