@@ -155,6 +155,39 @@ new Vue({
   }
 });
 
+$(document).ready(function(){
+  $('.fs-submit').on('click', function(){
+    var activityType = $('#q1').val();
+    var numPeople = $('#q2').val();
+    var wishList = $('#q3').val();
+    var startTime = $('#q4').val();
+    var endTime =  $('#q5').val();
+    var lat =  $('#lat').val();
+    var lng =  $('#lng').val();
+    var data = {activityType: activityType,
+                numPeople: numPeople,
+                wishList: wishList,
+                startTime: startTime,
+                endTime: endTime,
+                lat: lat,
+                lng: lng
+                };
+                console.log(data);
+    // $.ajax({
+    //       type: 'POST',
+    //       url: '/createSuccess',
+    //       data: data
+    //       // success: function(data){
+    //       //   //do something with the data via front-end framework
+    //       //   // location.reload();
+    //       // }
+    //   });
+
+        // return false;
+  })
+})
+
+var uluru;
 
 window.onload = function(){
   navigator.geolocation.getCurrentPosition(showPosition);
