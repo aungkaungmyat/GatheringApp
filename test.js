@@ -1,4 +1,18 @@
+Vue.component('date-picker',  {
+  template: '<input/>',
+  mounted: function() {
+  // var self = this;
+  // $(this.$el).datepicker({
+  //   // dateFormat: this.dateFormat,
+  //   // onSelect: function(date) {
+  //   //   self.$emit('update-date', date);
+  //   // }
+  // });
+  // flatpickr($(this.$el));
+  flatpickr(this.$el);
+  }
 
+});
 
 $(document).keypress(function(e) {
   if(e.which == 13) {

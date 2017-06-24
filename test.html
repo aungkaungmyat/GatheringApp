@@ -4,12 +4,19 @@
     <meta charset="utf-8">
     <title></title>
     <!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    <!-- <link href='/rome/example.css' rel='stylesheet' type='text/css' /> -->
+
+
     <link rel="stylesheet" href="test.css" type="text/css">
+    <script src="Flatpickr/flatpickr.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
+
     <div class="container" id="vue-app">
+
       <div class="fs-form-wrap" id="fs-form-wrap">
         <div class="fs-title">
           <h1>Create the group</h1>
@@ -23,6 +30,7 @@
               <li v-show="questions[0]"  key="firstq">
                 <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
                 <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat"  required/>
+                <date-picker></date-picker>
               </li>
               <li v-show="questions[1]"  key="secondq">
                 <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">What's your email address</label>
@@ -135,8 +143,14 @@
 
       </div>
     </div>
-    <script type="text/javascript" src="test.js">
 
+
+    <script src="Flatpickr/flatpickr.min.js"></script>
+    <script>
+    flatpickr('#flatpickr',{
+      enableTime: true
+    });
     </script>
+    <script type="text/javascript" src="test.js"></script>
   </body>
 </html>
