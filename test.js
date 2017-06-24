@@ -1,12 +1,19 @@
 Vue.component('date-picker',  {
-  template: '<input  class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat"  required/>',
+  template: '<input  class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="2017/6/17 12:00"  required/>',
   mounted: function() {
   flatpickr(this.$el,{
     enableTime: true
   });
-
   }
+});
 
+Vue.component('date-picker1',  {
+  template: '<input  class="fs-anim-lower" id="q5" name="q5" type="text" placeholder="2017/6/18 12:00"  required/>',
+  mounted: function() {
+  flatpickr(this.$el,{
+    enableTime: true
+  });
+  }
 });
 
 $(document).keypress(function(e) {
