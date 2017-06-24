@@ -647,3 +647,9 @@ button.fs-continue::before {
 .fs-form-wrap{
 	font-size: 70%;
 }
+
+/*for google map*/
+#map{
+	height: 400px;
+	width: 100%;
+}
