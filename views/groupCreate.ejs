@@ -1,75 +1,165 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>GroupCreate</title>
+<html lang="en" class="js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    <link rel="stylesheet" href="/assets/groupCreate.css" type="text/css">
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
 
-    <!-- <script type="text/javascript" src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script> -->
-	<script  src="./bower_components/jquery/dist/jquery.min.js"></script>
-  <script  src="./bower_components/moment/min/moment.min.js"></script>
-  <script  src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script  src="./bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="./bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-		<style>
-			#map{
-				height: 400px;
-				width: 100%;
+    <div class="container" id="vue-app">
 
-			}
-		</style>
-	</head>
-	<body>
-    <p><%=uname%> , what types of groups would you like to make</p>
-		<form name='creategrp-form' id="creategrp-form" method="POST" action='/createSuccess'>
-	<label for="activityType">Activity Type:</label>
-	<input type="text" name="activityType" id="activityType"><br>
-	Numbers of participants:
-  <input type="text" name="numPeople" id="numPeople"><br>
-  Wishlist:
-  <input type="radio" name="wishList" value="1" checked> Yes
-  <input type="radio" name="wishList" value="0"> No<br>
-   <!-- Time to Start: -->
-  <input type="hidden" name="startTime" id="startTime"><br>
-	<input type="hidden" name="endTime" id="endTime"><br>
-	<input type="hidden" name="lat" id="lat"><br>
-	<input type="hidden" name="lng" id="lng"><br>
-
-	<!-- for selecting time -->
-	<div class="row">
-			<div class='col-sm-6'>
-					<!-- <div class="form-group"> -->
-							<div class='input-group date' id='datetimepicker6'>
-									<input type='text' id="sTime" name="sTime" class="form-control" />
-									<span class="input-group-addon">
-											<span class="glyphicon glyphicon-calendar"></span>
-									</span>
-							</div>
-					<!-- </div> -->
-			</div>
-			<div class='col-sm-6'>
-					<!-- <div class="form-group"> -->
-							<div class='input-group date' id='datetimepicker7'>
-									<input type='text' id="eTime" name="eTime" class="form-control" />
-									<span class="input-group-addon">
-											<span class="glyphicon glyphicon-calendar"></span>
-									</span>
-							</div>
-					<!-- </div> -->
-			</div>
-	</div>
-
-  <input id="submitBut" type="submit" value="submit"></button>
-</form>
-
-	<!-- <button id="test">click me</button> -->
+      <div class="fs-form-wrap" id="fs-form-wrap">
+        <div class="fs-title">
+          <h1>Create the group</h1>
+        </div>
 
 
 
-	<div id="current">Nothing Yet...</div>
-	<div id="map"></div>
-	<script src="/controllers/groupCreate.js"></script>
-	<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFfdUNgAXnvosFCsyVy1ZoW8B01MQtUrI">
-	</script>
-	</body>
+        <form id="myform" class="fs-form" v-bind:class="[{fsformfull : formfull},{fsformoverview : overview}]" autocomplete="off" v-on:submit.prevent novalidate>
+          <ol class="fs-fields" v-bind:class="{fsdisplaynext : fstest}">
+            <template v-if="numDifference >= 0">
+            <transition-group name="fs-hide" mode="out-in">
+              <li v-show="questions[0]"  key="firstq">
+                <label class="fs-field-label fs-anim-upper" for="q1">What's activity do you want do?</label>
+                <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Soccer"  required/>
+
+              </li>
+              <li v-show="questions[1]"  key="secondq">
+                <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">How many people do you need?</label>
+                <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="1"  required/>
+                <!-- <div id="map"></div> -->
+              </li>
+              <li v-show="questions[2]"  key="thirdq">
+                <label class="fs-field-label fs-anim-upper" for="q3">What's do you want to have wishlist?</label>
+                <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="Yes or No" required/>
+              </li>
+              <li v-show="questions[3]"  key="forthq">
+                <label class="fs-field-label fs-anim-upper" for="q4">When do you want to start the activity?</label>
+                <!-- <input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="TTN" /> -->
+                <date-picker></date-picker>
+
+              </li>
+              <li v-show="questions[4]"  key="fifthq">
+                <label class="fs-field-label fs-anim-upper" for="q5">When do you expect your activity to finish?</label>
+                <!-- <input class="fs-anim-lower" id="q5" name="q5" type="text" placeholder="ramen" /> -->
+                <date-picker1></date-picker1>
+              </li>
+              <li v-show="questions[5]"  key="sixthq">
+                <label class="fs-field-label fs-anim-upper" for="q6">Where do you want to hold your activity?</label>
+                <!-- <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei" /> -->
+                <div id="map"></div>
+                <input type="hidden" name="lat" id="lat"><br>
+              	<input type="hidden" name="lng" id="lng"><br>
+              </li>
+              <!-- <li v-show="questions[5]"  key="sixthq">
+                <label class="fs-field-label fs-anim-upper" for="q6">Who do you love</label>
+                <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei"/>
+              </li> -->
+            </transition-group>
+            </template>
+            <template v-if="numDifference < 0">
+            <transition-group name="fs-hide-reverse" mode="out-in">
+              <li v-show="questions[0]"  key="firstq">
+                <label class="fs-field-label fs-anim-upper" for="q1">What's activity do you want do?</label>
+                <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Soccer"  required/>
+
+              </li>
+              <li v-show="questions[1]"  key="secondq">
+                <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">How many people do you need?</label>
+                <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="1"  required/>
+                <!-- <div id="map"></div> -->
+              </li>
+              <li v-show="questions[2]"  key="thirdq">
+                <label class="fs-field-label fs-anim-upper" for="q3">What's do you want to have wishlist?</label>
+                <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="Yes or No" required/>
+              </li>
+              <li v-show="questions[3]"  key="forthq">
+                <label class="fs-field-label fs-anim-upper" for="q4">When do you want to start the activity?</label>
+                <!-- <input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="TTN" /> -->
+                <date-picker></date-picker>
+
+              </li>
+              <li v-show="questions[4]"  key="fifthq">
+                <label class="fs-field-label fs-anim-upper" for="q5">When do you expect your activity to finish?</label>
+                <!-- <input class="fs-anim-lower" id="q5" name="q5" type="text" placeholder="ramen" /> -->
+                <date-picker1></date-picker1>
+              </li>
+              <li v-show="questions[5]"  key="sixthq">
+                <label class="fs-field-label fs-anim-upper" for="q6">Where do you want to hold your activity?</label>
+                <!-- <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei" /> -->
+                <div id="map"></div>
+                <input type="hidden" name="lat" id="lat"><br>
+              	<input type="hidden" name="lng" id="lng"><br>
+              </li>
+            </transition-group>
+            </template>
+            <!-- <li v-bind:class="[{fsHide: fstest},{fscurrent: questions[0]}]">
+              <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
+              <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" required/>
+            </li>
+            <li  v-bind:class="[{fstest : fstest},{fscurrent: questions[1]}]">
+              <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">What's your email address</label>
+              <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="akm@gmail.com" required/>
+            </li>
+            <li v-bind:class="[{fstest : fstest},{fscurrent: questions[2]}]">
+              <label class="fs-field-label fs-anim-upper" for="q3">What's do you  want</label>
+              <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="games" required/>
+            </li> -->
+            <!-- <li  v-bind:class="{fsHide: fstest}">
+              <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
+              <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" required/>
+            </li>
+            <li v-show="questions[1]" v-bind:class="{fstest : fstest}">
+              <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">What's your email address</label>
+              <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="akm@gmail.com" required/>
+            </li>
+            <li v-show="questions[2]" v-bind:class="{fstest : fstest}">
+              <label class="fs-field-label fs-anim-upper" for="q3">What's do you  want</label>
+              <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="games" required/>
+            </li> -->
+          </ol>
+          <button class="fs-submit" type="submit">Send answers</button>
+        </form>
+
+        <!-- fs control -->
+        <div class="fs-controls">
+        <button type="button" class="fs-continue" id="fscontinue" v-bind:class="{fsShow: formfull}" v-on:click="add(1);">
+          Continue
+        </button>
+        <nav class="fs-nav-dots" v-bind:class="{fsShow: formfull}">
+          <button v-for="num in numbers"
+          v-bind:class="[{ fsdotcurrent: num.num == number},{disabled: num.disabled}]" v-bind:id="num.num" v-on:click="changeNumber"></button>
+        </nav>
+        <span class="fs-numbers" v-bind:class="{fsShow: formfull}">
+          <template v-if='numDifference >= 0'>
+            <transition-group name="slidedown-fade" mode="out-in">
+              <span class="fs-number-current" v-if="show" key="current">{{ number }}</span>
+              <span class="fs-number-next" v-if="!show" key="nextnum">{{ nextNumber }}</span>
+            </transition-group>
+          </template>
+          <template v-else-if='numDifference < 0'>
+            <transition-group name="slideup-fade" mode="out-in">
+              <span class="fs-number-current" v-if="show" key="current">{{ number }}</span>
+              <span class="fs-number-next" v-if="!show" key="nextnum">{{ nextNumber }}</span>
+            </transition-group>
+          </template>
+          <span class="fs-number-total">6</span>
+        </span>
+        </div>
+        <!-- fs control -->
+
+      </div>
+    </div>
+
+
+    <script src="assets/js/flatpickr.min.js"></script>
+    <script type="text/javascript" src="/controllers/groupCreate.js"></script>
+    <script async defer
+  	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFfdUNgAXnvosFCsyVy1ZoW8B01MQtUrI">
+  	</script>
+  </body>
 </html>

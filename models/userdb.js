@@ -27,7 +27,7 @@ const personSchema = new Schema({
       type: Number
     },
     wishList:{
-      type: Boolean
+      type: String
     },
     startTime:{
       type: String

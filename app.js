@@ -107,7 +107,9 @@ app.post('/createSuccess' ,urlencodedParser, function(req,res){
       }
     }
     Person.findByIdAndUpdate({_id:req.session._id},updatedData).then(function(){
+      console.log('updateddata');
       Person.findOne({_id:req.session._id}).then(function(doc){
+        console.log('got inside here');
         res.render('createSuccess', {data:doc})
       })
     });
