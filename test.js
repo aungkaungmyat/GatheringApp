@@ -103,6 +103,7 @@ new Vue({
             break;
           case 5:
             this.questions[5] = true;
+            startMap();
             break;
           default:
 
@@ -191,9 +192,12 @@ $(document).ready(function(){
 
 var uluru;
 
-window.onload = function(){
+// window.onload = function(){
+//   navigator.geolocation.getCurrentPosition(showPosition);
+// };
+function startMap(){
   navigator.geolocation.getCurrentPosition(showPosition);
-};
+}
 
 function showPosition(position) {
   // var lat = position.coords.latitude;
