@@ -159,6 +159,7 @@ new Vue({
 });
 
 $(document).ready(function(){
+
   $('.fs-submit').on('click', function(){
     var activityType = $('#q1').val();
     var numPeople = $('#q2').val();
@@ -175,20 +176,33 @@ $(document).ready(function(){
                 lat: lat,
                 lng: lng
                 };
-                console.log(data);
+                // console.log(data);
+
     $.ajax({
           type: 'POST',
           url: '/createSuccess',
-          data: data
-    //       // success: function(data){
-    //       //   //do something with the data via front-end framework
-    //       //   // location.reload();
-          // }
+          data: data,
+           success: function(response){
+            //  console.log(response);
+            alert('group created');
+          //  console.log('successful');
+          // alert('success');
+          //    location.reload();
+          // console.log(data);
+          // $.ajax({
+          //   type: 'GET',
+          //   url: '/createSuccess',
+          //   success: function(){
+          //     console.log('got here')
+          //   }
+          //
+          // })
+           }
       });
 
         // return false;
-  })
-})
+  });
+});
 
 var uluru;
 
