@@ -17,8 +17,9 @@ Vue.component('date-picker1',  {
 });
 
 $(document).keypress(function(e) {
-  e.preventDefault();
+
   if(e.which == 13) {
+    e.preventDefault();
   $( "#fscontinue" ).trigger( "click" );
 }
 });
