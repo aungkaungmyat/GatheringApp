@@ -26,12 +26,10 @@
               <li v-show="questions[0]"  key="firstq">
                 <label class="fs-field-label fs-anim-upper" for="q1">What's activity do you want do?</label>
                 <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Soccer"  required/>
-
               </li>
               <li v-show="questions[1]"  key="secondq">
                 <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">How many people do you need?</label>
                 <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="1"  required/>
-                <!-- <div id="map"></div> -->
               </li>
               <li v-show="questions[2]"  key="thirdq">
                 <label class="fs-field-label fs-anim-upper" for="q3">What's do you want to have wishlist?</label>
@@ -55,10 +53,6 @@
                 <input type="hidden" name="lat" id="lat"><br>
               	<input type="hidden" name="lng" id="lng"><br>
               </li>
-              <!-- <li v-show="questions[5]"  key="sixthq">
-                <label class="fs-field-label fs-anim-upper" for="q6">Who do you love</label>
-                <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei"/>
-              </li> -->
             </transition-group>
             </template>
             <template v-if="numDifference < 0">
@@ -66,12 +60,10 @@
               <li v-show="questions[0]"  key="firstq">
                 <label class="fs-field-label fs-anim-upper" for="q1">What's activity do you want do?</label>
                 <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Soccer"  required/>
-
               </li>
               <li v-show="questions[1]"  key="secondq">
                 <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">How many people do you need?</label>
                 <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="1"  required/>
-                <!-- <div id="map"></div> -->
               </li>
               <li v-show="questions[2]"  key="thirdq">
                 <label class="fs-field-label fs-anim-upper" for="q3">What's do you want to have wishlist?</label>
@@ -97,30 +89,6 @@
               </li>
             </transition-group>
             </template>
-            <!-- <li v-bind:class="[{fsHide: fstest},{fscurrent: questions[0]}]">
-              <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
-              <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" required/>
-            </li>
-            <li  v-bind:class="[{fstest : fstest},{fscurrent: questions[1]}]">
-              <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">What's your email address</label>
-              <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="akm@gmail.com" required/>
-            </li>
-            <li v-bind:class="[{fstest : fstest},{fscurrent: questions[2]}]">
-              <label class="fs-field-label fs-anim-upper" for="q3">What's do you  want</label>
-              <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="games" required/>
-            </li> -->
-            <!-- <li  v-bind:class="{fsHide: fstest}">
-              <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
-              <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" required/>
-            </li>
-            <li v-show="questions[1]" v-bind:class="{fstest : fstest}">
-              <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">What's your email address</label>
-              <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="akm@gmail.com" required/>
-            </li>
-            <li v-show="questions[2]" v-bind:class="{fstest : fstest}">
-              <label class="fs-field-label fs-anim-upper" for="q3">What's do you  want</label>
-              <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="games" required/>
-            </li> -->
           </ol>
           <button class="fs-submit" type="submit">Send answers</button>
         </form>

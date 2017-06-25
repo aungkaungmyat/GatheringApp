@@ -87,7 +87,6 @@ body {
 .fsformoverview .fs-fields{
 	width: 40%;
 	top: 100px;
-	/*overflow: */
 }
 
 /*.fs-form .fsformoverview{
@@ -209,7 +208,6 @@ button.fs-continue {
 .no-js .fs-form .fs-fields > li{
 	margin: 1em 0 2em;
 	padding: 0 0 2em 0;
-	/*border-bottom: 2px solid rgba(0,0,0,0.1);*/
 }
 
 /*label*/
@@ -334,9 +332,7 @@ button.fs-continue {
 	color: rgba(0,0,0,0.1);
 }
 
-/*.fs-form li.fs-current{
-	visibility: visible;
-}*/
+
 
 .fs-hide-leave-active{
 	/*transition: all .5s ease;*/
@@ -653,6 +649,5 @@ button.fs-continue::before {
 	height: 350px;
 	width: 100%;
 	border: 2px solid rgba(0,0,0,0.2);
-	/*background-color: transparent;*/
 	border-radius: 2%;
 }
