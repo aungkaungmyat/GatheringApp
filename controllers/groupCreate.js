@@ -229,11 +229,26 @@ function showPosition(position) {
       position: uluru,
       map: map,
       draggable: true,
-      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+      // icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
     });
+
+  //   window.google.maps.event.addListener(map , 'drag', function (event) {
+  //         //  marker.setPosition( map .getCenter() );
+  //         // marker.setPosition( map.getCenter(););
+  //         map.setCenter(marker.getPosition());
+  //  });
+
+  google.maps.event.addListener(marker, 'dragstart', function(evt){
+  // document.getElementById('lat').value = evt.latLng.lat().toFixed(7);
+  // document.getElementById('lng').value = evt.latLng.lng().toFixed(7);
+  // map.setCenter(marker.getPosition());
+  map.panTo(marker.getPosition());
+});
+
     google.maps.event.addListener(marker, 'dragend', function(evt){
     document.getElementById('lat').value = evt.latLng.lat().toFixed(7);
     document.getElementById('lng').value = evt.latLng.lng().toFixed(7);
+    map.panTo(marker.getPosition());
 });
 
 
