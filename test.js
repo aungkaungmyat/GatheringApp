@@ -31,12 +31,12 @@ function initAutocomplete(){
 
           // For each place, get the icon, name and location.
           var bounds = new google.maps.LatLngBounds();
-          /*places.forEach(function(place) {
+          places.forEach(function(place) {
             if (!place.geometry) {
               console.log("Returned place contains no geometry");
               return;
             }
-            var icon = {
+          /*  var icon = {
               url: place.icon,
               size: new google.maps.Size(71, 71),
               origin: new google.maps.Point(0, 0),
@@ -58,7 +58,7 @@ function initAutocomplete(){
             } else {
               bounds.extend(place.geometry.location);
             }
-          // });
+          });
           map.fitBounds(bounds);
         });
       }
