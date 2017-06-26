@@ -12,9 +12,9 @@ function initMap(){
   });
 
   // search box
-  var input = document.getElementById('pac-input');
+  var input = document.getElementById('searchBox');
         var searchBox = new google.maps.places.SearchBox(input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
         map.addListener('bounds_changed', function() {
           searchBox.setBounds(map.getBounds());
