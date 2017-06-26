@@ -4,21 +4,31 @@
 }
 
 .mapContainer{
-  position: relative;
+  /*position: relative;*/
   height: 400px;
   width: 100%;
+
 }
 
 #map {
   height: 100%;
   width: 100%;
+
  }
 
 
-#pac-input{
-  position: absolute;
-  z-index: 2;
-  /*margin: 0 auto;*/
-  left: 45%;
-  padding: 0;
-}
+ #pac-input {
+         background-color: #fff;
+         font-family: Roboto;
+         font-size: 15px;
+         font-weight: 300;
+         margin-left: 12px;
+         margin-top: 10px;
+         padding: 5px 11px 5px 13px;
+         text-overflow: ellipsis;
+         width: 400px;
+       }
+
+       #pac-input:focus {
+         border-color: #4d90fe;
+       }
