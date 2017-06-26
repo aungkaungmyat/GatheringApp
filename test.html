@@ -1,165 +1,174 @@
 <!DOCTYPE html>
-<html lang="en" class="js">
+<html>
   <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
-    <link rel="stylesheet" href="test.css" type="text/css">
-    <script src="https://unpkg.com/vue"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Places Searchbox</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
+    </style>
   </head>
   <body>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+    <script>
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
 
-    <div class="container" id="vue-app">
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-      <div class="fs-form-wrap" id="fs-form-wrap">
-        <div class="fs-title">
-          <h1>Create the group</h1>
-        </div>
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -33.8688, lng: 151.2195},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
 
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
 
-        <form id="myform" class="fs-form" v-bind:class="[{fsformfull : formfull},{fsformoverview : overview}]" autocomplete="off" v-on:submit.prevent novalidate>
-          <ol class="fs-fields" v-bind:class="{fsdisplaynext : fstest}">
-            <template v-if="numDifference >= 0">
-            <transition-group name="fs-hide" mode="out-in">
-              <li v-show="questions[0]"  key="firstq">
-                <label class="fs-field-label fs-anim-upper" for="q1">What's activity do you want do?</label>
-                <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Soccer"  required/>
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
 
-              </li>
-              <li v-show="questions[1]"  key="secondq">
-                <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">How many people do you need?</label>
-                <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="1"  required/>
-                <!-- <div id="map"></div> -->
-              </li>
-              <li v-show="questions[2]"  key="thirdq">
-                <label class="fs-field-label fs-anim-upper" for="q3">What's do you want to have wishlist?</label>
-                <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="Yes or No" required/>
-              </li>
-              <li v-show="questions[3]"  key="forthq">
-                <label class="fs-field-label fs-anim-upper" for="q4">When do you want to start the activity?</label>
-                <!-- <input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="TTN" /> -->
-                <date-picker></date-picker>
+          if (places.length == 0) {
+            return;
+          }
 
-              </li>
-              <li v-show="questions[4]"  key="fifthq">
-                <label class="fs-field-label fs-anim-upper" for="q5">When do you expect your activity to finish?</label>
-                <!-- <input class="fs-anim-lower" id="q5" name="q5" type="text" placeholder="ramen" /> -->
-                <date-picker1></date-picker1>
-              </li>
-              <li v-show="questions[5]"  key="sixthq">
-                <label class="fs-field-label fs-anim-upper" for="q6">Where do you want to hold your activity?</label>
-                <!-- <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei" /> -->
-                <div id="map"></div>
-                <input type="hidden" name="lat" id="lat"><br>
-              	<input type="hidden" name="lng" id="lng"><br>
-              </li>
-              <!-- <li v-show="questions[5]"  key="sixthq">
-                <label class="fs-field-label fs-anim-upper" for="q6">Who do you love</label>
-                <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei"/>
-              </li> -->
-            </transition-group>
-            </template>
-            <template v-if="numDifference < 0">
-            <transition-group name="fs-hide-reverse" mode="out-in">
-              <li v-show="questions[0]"  key="firstq">
-                <label class="fs-field-label fs-anim-upper" for="q1">What's activity do you want do?</label>
-                <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Soccer"  required/>
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
 
-              </li>
-              <li v-show="questions[1]"  key="secondq">
-                <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">How many people do you need?</label>
-                <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="1"  required/>
-                <!-- <div id="map"></div> -->
-              </li>
-              <li v-show="questions[2]"  key="thirdq">
-                <label class="fs-field-label fs-anim-upper" for="q3">What's do you want to have wishlist?</label>
-                <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="Yes or No" required/>
-              </li>
-              <li v-show="questions[3]"  key="forthq">
-                <label class="fs-field-label fs-anim-upper" for="q4">When do you want to start the activity?</label>
-                <!-- <input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="TTN" /> -->
-                <date-picker></date-picker>
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
 
-              </li>
-              <li v-show="questions[4]"  key="fifthq">
-                <label class="fs-field-label fs-anim-upper" for="q5">When do you expect your activity to finish?</label>
-                <!-- <input class="fs-anim-lower" id="q5" name="q5" type="text" placeholder="ramen" /> -->
-                <date-picker1></date-picker1>
-              </li>
-              <li v-show="questions[5]"  key="sixthq">
-                <label class="fs-field-label fs-anim-upper" for="q6">Where do you want to hold your activity?</label>
-                <!-- <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei" /> -->
-                <div id="map"></div>
-                <input type="hidden" name="lat" id="lat"><br>
-              	<input type="hidden" name="lng" id="lng"><br>
-              </li>
-            </transition-group>
-            </template>
-            <!-- <li v-bind:class="[{fsHide: fstest},{fscurrent: questions[0]}]">
-              <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
-              <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" required/>
-            </li>
-            <li  v-bind:class="[{fstest : fstest},{fscurrent: questions[1]}]">
-              <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">What's your email address</label>
-              <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="akm@gmail.com" required/>
-            </li>
-            <li v-bind:class="[{fstest : fstest},{fscurrent: questions[2]}]">
-              <label class="fs-field-label fs-anim-upper" for="q3">What's do you  want</label>
-              <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="games" required/>
-            </li> -->
-            <!-- <li  v-bind:class="{fsHide: fstest}">
-              <label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
-              <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Aung Kaung Myat" required/>
-            </li>
-            <li v-show="questions[1]" v-bind:class="{fstest : fstest}">
-              <label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you span, we promise...">What's your email address</label>
-              <input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="akm@gmail.com" required/>
-            </li>
-            <li v-show="questions[2]" v-bind:class="{fstest : fstest}">
-              <label class="fs-field-label fs-anim-upper" for="q3">What's do you  want</label>
-              <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="games" required/>
-            </li> -->
-          </ol>
-          <button class="fs-submit" type="submit">Send answers</button>
-        </form>
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
 
-        <!-- fs control -->
-        <div class="fs-controls">
-        <button type="button" class="fs-continue" id="fscontinue" v-bind:class="{fsShow: formfull}" v-on:click="add(1);">
-          Continue
-        </button>
-        <nav class="fs-nav-dots" v-bind:class="{fsShow: formfull}">
-          <button v-for="num in numbers"
-          v-bind:class="[{ fsdotcurrent: num.num == number},{disabled: num.disabled}]" v-bind:id="num.num" v-on:click="changeNumber"></button>
-        </nav>
-        <span class="fs-numbers" v-bind:class="{fsShow: formfull}">
-          <template v-if='numDifference >= 0'>
-            <transition-group name="slidedown-fade" mode="out-in">
-              <span class="fs-number-current" v-if="show" key="current">{{ number }}</span>
-              <span class="fs-number-next" v-if="!show" key="nextnum">{{ nextNumber }}</span>
-            </transition-group>
-          </template>
-          <template v-else-if='numDifference < 0'>
-            <transition-group name="slideup-fade" mode="out-in">
-              <span class="fs-number-current" v-if="show" key="current">{{ number }}</span>
-              <span class="fs-number-next" v-if="!show" key="nextnum">{{ nextNumber }}</span>
-            </transition-group>
-          </template>
-          <span class="fs-number-total">6</span>
-        </span>
-        </div>
-        <!-- fs control -->
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
 
-      </div>
-    </div>
-
-
-    <script src="Flatpickr/flatpickr.min.js"></script>
-    <script type="text/javascript" src="test.js"></script>
-    <script async defer
-  	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFfdUNgAXnvosFCsyVy1ZoW8B01MQtUrI">
-  	</script>
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFfdUNgAXnvosFCsyVy1ZoW8B01MQtUrI&libraries=places&callback=initAutocomplete"
+         async defer></script>
   </body>
 </html>
