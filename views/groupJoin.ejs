@@ -8,13 +8,20 @@
     <p>Current location is</p>
     <div id="current">Nothing yet...</div>
     <p id='latAndLong'></p>
-    <div id="map"></div>
+
+    <div class="mapContainer">
+      <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+      <div id="map">
+    </div>
+
+
+    </div>
       <script>
   var local_data = <%- JSON.stringify(data) %>;
       </script>
       <script src="/controllers/groupJoin.js"></script>
       <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFfdUNgAXnvosFCsyVy1ZoW8B01MQtUrI">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFfdUNgAXnvosFCsyVy1ZoW8B01MQtUrI&libraries=places">
       </script>
   </body>
 </html>

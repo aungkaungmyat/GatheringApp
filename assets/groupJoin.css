@@ -1,8 +1,24 @@
+
 .heading{
   text-align: center;
 }
 
-#map {
+.mapContainer{
+  position: relative;
   height: 400px;
   width: 100%;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
  }
+
+
+#pac-input{
+  position: absolute;
+  z-index: 2;
+  /*margin: 0 auto;*/
+  left: 45%;
+  padding: 0;
+}
