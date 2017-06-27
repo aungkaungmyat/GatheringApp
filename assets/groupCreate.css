@@ -661,9 +661,22 @@ button.fs-continue::before {
  #input_container{
 	 /*display: inline;*/
 	 position: absolute;
-	 left: 12%;
+	 left: 100px;
 	 z-index: 2;
 		height: 50px;
+		width: 50%;
+ }
+
+ #input_container ::-webkit-input-placeholder{
+ 	color: #919191;
+ }
+
+ #input_container ::-moz-placeholder{
+ 	color: #919191;
+ }
+
+ #input_container ::-ms-input-placeholder{
+ 	color: #919191;
  }
 
  #searchBox {
@@ -677,9 +690,10 @@ button.fs-continue::before {
          margin-top: 10px;
          padding: 5px 11px 5px 43px;
 				 /*border: auto;*/
-				 border: 1px solid black;
+				 border: 1px solid #9b9ba3;
          text-overflow: ellipsis;
-         width: 300px;
+         /*width: 300px;*/
+				 width: 60%;
 
 }
 
@@ -688,6 +702,7 @@ button.fs-continue::before {
 			/*border: default;*/
        border: 2px solid #4d90fe;
 }
+
 
 #verticalLine{
 	/*position: relative;
