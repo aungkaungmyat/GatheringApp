@@ -659,6 +659,7 @@ button.fs-continue::before {
  }
 
  #input_container{
+	 /*display: inline;*/
 	 position: absolute;
 	 left: 12%;
 	 z-index: 2;
@@ -688,12 +689,18 @@ button.fs-continue::before {
        border: 2px solid #4d90fe;
 }
 
-#toBeMovedLeft{
+#verticalLine{
+	/*position: relative;
   margin-left: -425px;
   background: #bababc;
-  width:0px;
-  border:none;
-
+  width:4px;
+  border:none;*/
+	position:absolute;
+    bottom:13px;
+    left:40px;
+    width:15px;
+    height:24px;
+    z-index: 3;
 }
 
 #input_img{
