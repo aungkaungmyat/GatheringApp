@@ -16,11 +16,11 @@ Vue.component('date-picker1',  {
   }
 });
 
-window.onload = function () {
-    // var e = document.getElementById("db_info");
-    // e.innerHTML='Found you';
-    document.getElementById("toBeMovedLeft").style.marginLeft = (Number(document.getElementById("searchBox").offsetWidth) * (-1)) + 33 + "px";
-};
+// window.onload = function () {
+//     // var e = document.getElementById("db_info");
+//     // e.innerHTML='Found you';
+//     document.getElementById("verticalLine").style.marginLeft = (Number(document.getElementById("searchBox").offsetWidth) * (-1)) + 33 + "px";
+// };
 // document.getElementById("toBeMovedLeft").style.marginLeft = (Number(document.getElementById("searchBox").offsetWidth) * (-1)) + 33 + "px";
 // console.log(document.getElementById("searchBox").offsetWidth)
 
@@ -221,6 +221,8 @@ function startMap(){
 
 function showPosition(position) {
 
+
+
     uluru = {lat: position.coords.latitude, lng: position.coords.longitude};
     document.getElementById('lat').value = position.coords.latitude;
 
@@ -239,6 +241,37 @@ function showPosition(position) {
       draggable: true,
       icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
     });
+
+    // search box
+          var input = document.getElementById('searchBox');
+          var searchBox = new google.maps.places.SearchBox(input);
+          // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+          map.addListener('bounds_changed', function() {
+            searchBox.setBounds(map.getBounds());
+          });
+
+          searchBox.addListener('places_changed', function() {
+            var places = searchBox.getPlaces();
+
+            if (places.length == 0) {
+              return;
+            }
+            var bounds = new google.maps.LatLngBounds();
+            places.forEach(function(place) {
+              if (!place.geometry) {
+                console.log("Returned place contains no geometry");
+                return;
+              }
+              if (place.geometry.viewport) {
+                // Only geocodes have viewport.
+                bounds.union(place.geometry.viewport);
+              } else {
+                bounds.extend(place.geometry.location);
+              }
+            });
+            map.fitBounds(bounds);
+          });
 
 
   google.maps.event.addListener(marker, 'dragstart', function(evt){
