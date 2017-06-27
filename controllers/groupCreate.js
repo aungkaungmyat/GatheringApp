@@ -232,7 +232,8 @@ function showPosition(position) {
 
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 18,
-      center: uluru
+      center: uluru,
+      disableDoubleClickZoom: true
     });
 
     var marker = new google.maps.Marker({
