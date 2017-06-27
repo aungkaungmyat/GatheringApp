@@ -285,5 +285,14 @@ function showPosition(position) {
 
 });
 
+// google.maps.event.addListener(marker, "dblclick", function (e) {
+//            console.log("Double Click");
+//         });
+google.maps.event.addListener(map, 'dblclick', function(event) {
+  // mapZoom = map.getZoom();
+  // startLocation = event.latLng;
+  // setTimeout(placeMarker, 600);
+  console.log("double click")
+});
 
 };
