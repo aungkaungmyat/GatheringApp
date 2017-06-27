@@ -645,11 +645,48 @@ button.fs-continue::before {
 }
 
 /*for google map*/
-#map{
+.mapContainer{
 	height: 350px;
 	width: 100%;
 	border: 2px solid rgba(0,0,0,0.2);
 	border-radius: 2%;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+ }
+
+ #input_container{
+	 position: absolute;
+	 left: 12%;
+	 z-index: 2;
+ }
+
+ #searchBox {
+         background-color: #fff;
+         /*background-image: url(/assets/img/group.svg) no-repeat 7px 7px;*/
+         font-family: Roboto;
+				 color: #3B3F45;
+         font-size: 15px;
+         font-weight: 300;
+         margin-left: 12px;
+         margin-top: 10px;
+         padding: 5px 11px 5px 43px;
+         text-overflow: ellipsis;
+         width: 300px;
+}
+
+#searchBox:focus {
+       border-color: #4d90fe;
+}
+
+#toBeMovedLeft{
+  margin-left: -425px;
+  background: #bababc;
+  width:0px;
+  border:none;
+  border-color:
 }
 
 .fsformoverview #map{

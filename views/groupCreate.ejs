@@ -49,7 +49,16 @@
               <li v-show="questions[5]"  key="sixthq">
                 <label class="fs-field-label fs-anim-upper" for="q6">Where do you want to hold your activity?</label>
                 <!-- <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei" /> -->
-                <div id="map"></div>
+                <!-- <div id="map"></div> -->
+                <div class="mapContainer">
+                  <div id="input_container">
+                    <input id="searchBox" class="controls" type="text" placeholder="Search Box">
+                    <!-- <input id="toBeMovedLeft" type="textarea" value="" disabled/> -->
+                    <!-- <img src="/assets/img/group.svg" alt="" id="input_img"> -->
+                  </div>
+
+                  <div id="map">
+                </div>
                 <input type="hidden" name="lat" id="lat"><br>
               	<input type="hidden" name="lng" id="lng"><br>
               </li>
@@ -83,7 +92,11 @@
               <li v-show="questions[5]"  key="sixthq">
                 <label class="fs-field-label fs-anim-upper" for="q6">Where do you want to hold your activity?</label>
                 <!-- <input class="fs-anim-lower" id="q4" name="q6" type="text" placeholder="liu yui fei" /> -->
-                <div id="map"></div>
+
+                <!-- <div id="map"></div> -->
+                <div class="mapContainer">
+
+                </div>
                 <input type="hidden" name="lat" id="lat"><br>
               	<input type="hidden" name="lng" id="lng"><br>
               </li>

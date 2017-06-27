@@ -16,6 +16,9 @@ Vue.component('date-picker1',  {
   }
 });
 
+// document.getElementById("toBeMovedLeft").style.marginLeft = (Number(document.getElementById("searchBox").offsetWidth) * (-1)) + 33 + "px";
+
+
 $(document).keypress(function(e) {
 
   if(e.which == 13) {
