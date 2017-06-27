@@ -286,17 +286,13 @@ function showPosition(position) {
 
 });
 
-// google.maps.event.addListener(marker, "dblclick", function (e) {
-//            console.log("Double Click");
-//         });
+
 google.maps.event.addListener(map, 'dblclick', function(event) {
-  // mapZoom = map.getZoom();
-  // startLocation = event.latLng;
-  // setTimeout(placeMarker, 600);
+  
   document.getElementById('lat').value = event.latLng.lat().toFixed(7);
   document.getElementById('lng').value = event.latLng.lng().toFixed(7);
-    marker.setPosition(event.latLng);
-      map.panTo(marker.getPosition());
+  marker.setPosition(event.latLng);
+  map.panTo(marker.getPosition());
 });
 
 };
