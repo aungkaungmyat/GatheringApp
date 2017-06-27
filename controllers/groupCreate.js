@@ -16,8 +16,13 @@ Vue.component('date-picker1',  {
   }
 });
 
+window.onload = function () {
+    // var e = document.getElementById("db_info");
+    // e.innerHTML='Found you';
+    document.getElementById("toBeMovedLeft").style.marginLeft = (Number(document.getElementById("searchBox").offsetWidth) * (-1)) + 33 + "px";
+};
 // document.getElementById("toBeMovedLeft").style.marginLeft = (Number(document.getElementById("searchBox").offsetWidth) * (-1)) + 33 + "px";
-
+// console.log(document.getElementById("searchBox").offsetWidth)
 
 $(document).keypress(function(e) {
 
