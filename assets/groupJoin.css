@@ -21,6 +21,8 @@
   z-index: 2;
 }
 
+
+
  #searchBox {
          background-color: #fff;
          /*background-image: url(/assets/img/group.svg) no-repeat 7px 7px;*/
@@ -29,12 +31,18 @@
          font-weight: 300;
          margin-left: 12px;
          margin-top: 10px;
-         padding: 5px 11px 5px 32px;
+         padding: 5px 11px 5px 43px;
          text-overflow: ellipsis;
          width: 400px;
 }
 
-
+#toBeMovedLeft{
+  margin-left: -425px;
+  background: #bababc;
+  width:0px;
+  border:none;
+  border-color:
+}
 
 
 #searchBox:focus {
@@ -47,5 +55,5 @@
     left:18px;
     width:24px;
     height:24px;
-    z-index: 45;
+    z-index: 3;
 }

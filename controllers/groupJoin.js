@@ -1,3 +1,5 @@
+// document.getElementById("toBeMovedLeft").style.marginLeft = Number(document.getElementById("searchBox").offsetWidth) / 1 * (-1) + "px";
+console.log(document.getElementById("searchBox").offsetWidth)
 var x = document.getElementById("latAndLong");
 var uluru;
 
