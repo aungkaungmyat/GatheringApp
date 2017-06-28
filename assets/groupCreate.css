@@ -740,6 +740,20 @@ button.fs-continue::before {
 	padding: 2em 0;
 }
 
+.ac-custom ul,
+.ac-custom ol {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+/*.ac-custom li {
+	margin: 0 auto;
+	padding: 2em 0;
+	position: relative;
+}*/
+
 .ac-custom label {
 	display: inline-block;
 	position: relative;
