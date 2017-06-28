@@ -102,6 +102,7 @@ new Vue({
             break;
           case 2:
             this.questions[2] = true;
+            createani();
             break;
           case 3:
             this.questions[3] = true;
@@ -288,7 +289,7 @@ function showPosition(position) {
 
 
 google.maps.event.addListener(map, 'dblclick', function(event) {
-  
+
   document.getElementById('lat').value = event.latLng.lat().toFixed(7);
   document.getElementById('lng').value = event.latLng.lng().toFixed(7);
   marker.setPosition(event.latLng);

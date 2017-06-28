@@ -16,7 +16,7 @@ body {
 	font-size: 1.4em;
 	font-family: 'Raleway', Arial, sans-serif;
 	overflow: hidden;
-	/*overflow-y: scroll;*/
+	overflow-y: scroll;
 	min-height: 590px;
 }
 
@@ -738,6 +738,7 @@ button.fs-continue::before {
 	display: inline;
 	margin: 0 auto;
 	padding: 2em 0;
+	/*background-color: red;*/
 }
 
 .ac-custom ul,
@@ -746,6 +747,7 @@ button.fs-continue::before {
 	padding: 0;
 	margin: 0 auto;
 	max-width: 800px;
+	background: red;
 }
 
 /*.ac-custom li {

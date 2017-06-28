@@ -1,7 +1,10 @@
+function createani(){
+
 if( document.createElement('svg').getAttributeNS ) {
 
+
 	var checkbxsCross = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-cross input[type="checkbox"]' ) ),
-		radiobxsFill = Array.prototype.slice.call( document.querySelectorAll( 'ul.ac-fill input[type="radio"]' ) ),
+		radiobxsFill = Array.prototype.slice.call( document.querySelectorAll( 'form.fs-form input[type="radio"]' ) ),
 		checkbxsCheckmark = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-checkmark input[type="checkbox"]' ) ),
 		radiobxsCircle = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-circle input[type="radio"]' ) ),
 		checkbxsBoxfill = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-boxfill input[type="checkbox"]' ) ),
@@ -57,6 +60,7 @@ if( document.createElement('svg').getAttributeNS ) {
 	}
 
 	function controlRadiobox( el, type ) {
+		console.log('got in here')
 		var svg = createSVGEl();
 		el.parentNode.appendChild( svg );
 		el.addEventListener( 'change', function() {
@@ -134,4 +138,5 @@ if( document.createElement('svg').getAttributeNS ) {
 		} );
 	}
 
+}
 }
