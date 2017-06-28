@@ -33,7 +33,9 @@
               </li>
               <li v-show="questions[2]"  key="thirdq">
                 <label class="fs-field-label fs-anim-upper" for="q3">What's do you want to have wishlist?</label>
-                <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="Yes or No" required/>
+                <!-- <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="Yes or No" required/> -->
+                <input class="fs-anim-lower" type="radio" id="q3a" name="q3"><label for="q3a">Yes</label>
+                <input class="fs-anim-lower" type="radio" id="q3b" name="q3"><label for="q3b">No</label>
               </li>
               <li v-show="questions[3]"  key="forthq">
                 <label class="fs-field-label fs-anim-upper" for="q4">When do you want to start the activity?</label>
