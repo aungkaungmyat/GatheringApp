@@ -163,6 +163,33 @@ body {
 	color: #232529;
 }
 
+/*#fs-form-wrap .fsformoverview .fs-fields ul.ac-radio input[type="radio"]{
+	width: 100px;;
+	border:1px solid #ff0000;
+
+}*/
+
+.fsformoverview .ac-custom label::before {
+	content: '';
+	border: 4px solid rgba(0,0,0,0.1);
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+
+/*.fsformoverview .fs-fields ul.ac-custom input[type="checkbox"]:checked + label{
+	color: rgba(0,0,0,0.1);
+	/*border-radius: 25%;
+	border:1px solid #ff0000;
+	/*background: red;
+}*/
+
+.fsformoverview .fs-fields ul.ac-fill label{
+	color: #3b3f45;
+	font-weight: 700;
+	font-size: 1.85em;
+}
+
 .button.fs-submit{
 	width: 100%;
 	font-size: 1.25em;
@@ -788,7 +815,7 @@ ol.ac-custom {
 	z-index: 100;
 }
 
-.ac-custom label::before {
+.fsformfull .ac-custom label::before {
 	content: '';
 	border: 4px solid #fff;
 	-webkit-transition: opacity 0.3s;
