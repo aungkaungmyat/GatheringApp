@@ -172,7 +172,7 @@ $(document).ready(function(){
   $('.fs-submit').on('click', function(){
     var activityType = $('#q1').val();
     var numPeople = $('#q2').val();
-    var wishList = $('#q3').val();
+    var wishList = $('input[name="q3"]:checked').val();
     var startTime = $('#q4').val();
     var endTime =  $('#q5').val();
     var lat =  $('#lat').val();
@@ -185,7 +185,7 @@ $(document).ready(function(){
                 lat: lat,
                 lng: lng
                 };
-                // console.log(data);
+                console.log(data);
 
     $.ajax({
           type: 'POST',

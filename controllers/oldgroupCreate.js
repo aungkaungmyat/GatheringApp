@@ -36,15 +36,15 @@ $(document).ready(function(){
                 lat: lat,
                 lng: lng
                 };
-    $.ajax({
-          type: 'POST',
-          url: '/createSuccess',
-          data: data
-          // success: function(data){
-          //   //do something with the data via front-end framework
-          //   // location.reload();
-          // }
-      });
+    // $.ajax({
+    //       type: 'POST',
+    //       url: '/createSuccess',
+    //       data: data
+    //       // success: function(data){
+    //       //   //do something with the data via front-end framework
+    //       //   // location.reload();
+    //       // }
+    //   });
 
         // return false;
   })
