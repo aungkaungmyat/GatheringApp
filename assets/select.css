@@ -1,5 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+
 body{
    background: #16a085;
+   font-weight: 400;
+	font-size: 2em;
+	font-family: 'Raleway', Arial, sans-serif;
 }
 
 p{
@@ -48,10 +53,9 @@ p{
    background: #ff6d4a;
    border-radius: 50px;
    color: #fff;
-   font-size: 20px;
    text-align: center;
    line-height: 100px;
-   font-family: verdana;
+   font-weight: bold;
    text-transform: uppercase;
    animation: animate 3s linear infinite;
    /*margin: 250px 0 0 450px;*/
@@ -67,10 +71,9 @@ p{
    background: #ff6d4a;
    border-radius: 50px;
    color: #fff;
-   font-size: 20px;
+   font-weight: bold;
    text-align: center;
    line-height: 100px;
-   font-family: verdana;
    text-transform: uppercase;
    animation: animate 3s linear infinite;
    /*margin: 250px 0 0 450px;
