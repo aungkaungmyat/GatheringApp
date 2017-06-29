@@ -176,6 +176,9 @@ body {
 	transition: opacity 0.3s;
 }
 
+.fsformoverview .ac-custom input[type="radio"]:checked + label {
+	color: #FB887C;
+}
 
 /*.fsformoverview .fs-fields ul.ac-custom input[type="checkbox"]:checked + label{
 	color: rgba(0,0,0,0.1);
@@ -188,6 +191,16 @@ body {
 	color: #3b3f45;
 	font-weight: 700;
 	font-size: 1.85em;
+}
+
+.fsformoverview .ac-custom svg {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 50%;
+	margin-top: -38px;
+	left: 5px;
+	pointer-events: none;
 }
 
 .button.fs-submit{
@@ -827,7 +840,7 @@ ol.ac-custom {
 }
 
 .ac-custom input[type="checkbox"]:checked + label,
-.ac-custom input[type="radio"]:checked + label {
+.fsformfull .ac-custom input[type="radio"]:checked + label {
 	color: #fff;
 }
 
@@ -838,7 +851,7 @@ ol.ac-custom {
 
 /* General SVG and path styles */
 
-.ac-custom svg {
+.fsformfull .ac-custom svg {
 	position: absolute;
 	width: 40px;
 	height: 40px;
