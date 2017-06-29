@@ -193,14 +193,22 @@ body {
 	font-size: 1.85em;
 }
 
-.fsformoverview .ac-custom svg {
-	position: absolute;
-	width: 40px;
-	height: 40px;
-	top: 50%;
-	margin-top: -38px;
-	left: 5px;
-	pointer-events: none;
+.fsformoverview .fs-fields ul.ac-fill li{
+	border-bottom: none;
+	padding: 0;
+}
+
+
+.fsformoverview .ac-custom label {
+	display: inline-block;
+	position: relative;
+	font-size: 1.5em;
+	padding: 0 0 0 80px;
+	vertical-align: top;
+	color: rgba(0,0,0,0.2);
+	cursor: pointer;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
 }
 
 .button.fs-submit{
@@ -795,7 +803,7 @@ ol.ac-custom {
 	position: relative;
 }
 
-.ac-custom label {
+.fsformfull .ac-custom label {
 	display: inline-block;
 	position: relative;
 	font-size: 1.5em;
@@ -851,7 +859,7 @@ ol.ac-custom {
 
 /* General SVG and path styles */
 
-.fsformfull .ac-custom svg {
+.ac-custom svg {
 	position: absolute;
 	width: 40px;
 	height: 40px;
