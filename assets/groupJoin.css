@@ -1,3 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+
+.body, html{
+  background: #F06060;
+  font-weight: 400;
+	font-size: 1.4em;
+	font-family: 'Raleway', Arial, sans-serif;
+}
+
 
 .heading{
   text-align: center;
@@ -41,7 +50,7 @@
   background: #bababc;
   width:0px;
   border:none;
-  
+
 }
 
 
