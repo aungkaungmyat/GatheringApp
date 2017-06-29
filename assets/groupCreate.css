@@ -733,28 +733,27 @@ button.fs-continue::before {
 /*map end*/
 
 /*checkbox animation*/
-.ac-custom input{
+/*.ac-custom input{
 	width: 20px;
 	display: inline;
 	margin: 0 auto;
 	padding: 2em 0;
-	/*background-color: red;*/
-}
+}*/
 
-.ac-custom ul,
-.ac-custom ol {
+ul.ac-custom,
+ol.ac-custom {
 	list-style: none;
 	padding: 0;
 	margin: 0 auto;
 	max-width: 800px;
-	background: red;
+	/*background: red;*/
 }
 
-/*.ac-custom li {
+.ac-custom li {
 	margin: 0 auto;
-	padding: 2em 0;
+	padding: 0 0;
 	position: relative;
-}*/
+}
 
 .ac-custom label {
 	display: inline-block;
