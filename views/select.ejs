@@ -5,8 +5,9 @@
     <!-- <script src="https://unpkg.com/vue"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/select.css" rel="stylesheet" type="text/css">
+		<script src="/assets/js/snap.svg-min.js"></script>
   </head>
   <body>
     <!-- <p>Welcome from selection page <%=userinfo.usrname%></p> -->
@@ -66,5 +67,57 @@
     <!-- <script type="text/javascript" src="/controllers/select.js">
 
     </script> -->
+    <script src="/controllers/select.js"></script>
+		<script>
+			(function() {
+
+				function SVGMenu( el, options ) {
+					this.el = el;
+					this.init();
+				}
+
+				SVGMenu.prototype.init = function() {
+					this.trigger = this.el.querySelector( 'button.menu__handle' );
+					this.shapeEl = this.el.querySelector( 'div.morph-shape' );
+
+					var s = Snap( this.shapeEl.querySelector( 'svg' ) );
+					this.pathEl = s.select( 'path' );
+					this.paths = {
+						reset : this.pathEl.attr( 'd' ),
+						open : this.shapeEl.getAttribute( 'data-morph-open' ),
+						close : this.shapeEl.getAttribute( 'data-morph-close' )
+					};
+
+					this.isOpen = false;
+
+					this.initEvents();
+				};
+
+				SVGMenu.prototype.initEvents = function() {
+					this.trigger.addEventListener( 'click', this.toggle.bind(this) );
+				};
+
+				SVGMenu.prototype.toggle = function() {
+					var self = this;
+
+					if( this.isOpen ) {
+						classie.remove( self.el, 'menu--anim' );
+						setTimeout( function() { classie.remove( self.el, 'menu--open' );	}, 250 );
+					}
+					else {
+						classie.add( self.el, 'menu--anim' );
+						setTimeout( function() { classie.add( self.el, 'menu--open' );	}, 250 );
+					}
+					this.pathEl.stop().animate( { 'path' : this.isOpen ? this.paths.close : this.paths.open }, 350, mina.easeout, function() {
+						self.pathEl.stop().animate( { 'path' : self.paths.reset }, 800, mina.elastic );
+					} );
+
+					this.isOpen = !this.isOpen;
+				};
+
+				new SVGMenu( document.getElementById( 'menu' ) );
+
+			})();
+		</script>
   </body>
 </html>
