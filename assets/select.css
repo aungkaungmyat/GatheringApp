@@ -117,10 +117,10 @@ a:focus {
 	transition-delay: 0.2s;
 }
 
-.menu ul li:nth-child(3) {
+/*.menu ul li:nth-child(3) {
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
-}
+}*/
 
 .menu ul li a {
 	display: block;
