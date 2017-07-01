@@ -36,6 +36,7 @@ a:hover,
 a:focus {
 	color: #afb3b8;
 	outline: none;
+	text-decoration: none;
 }
 
 
@@ -239,10 +240,9 @@ a:focus {
 
 
 /*origianl css*/
-body{
+/*body{
    font-weight: 400;
-	/*font-size: 1em;*/
-}
+}*/
 
 p{
    text-align: center;
